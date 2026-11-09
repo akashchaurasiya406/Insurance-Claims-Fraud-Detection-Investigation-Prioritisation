@@ -1,0 +1,104 @@
+table capacity_curve
+	lineageTag: 3bf8f69c-2350-5f4d-92e1-b1f9f9f40794
+
+	column pct_reviewed
+		dataType: int64
+		formatString: 0
+		lineageTag: 29ce335c-d800-5cc4-9196-96aed0066a7c
+		summarizeBy: none
+		sourceColumn: pct_reviewed
+
+		annotation SummarizationSetBy = User
+
+	column precision_at_capacity
+		dataType: double
+		formatString: 0.0%
+		lineageTag: 99d24dc5-a648-5bee-a529-a8a21b0f4bc9
+		summarizeBy: none
+		sourceColumn: precision_at_capacity
+
+		annotation SummarizationSetBy = User
+
+	column recall_at_capacity
+		dataType: double
+		formatString: 0.0%
+		lineageTag: 26a92fa7-b9e9-52b5-b993-9873c92ba01c
+		summarizeBy: none
+		sourceColumn: recall_at_capacity
+
+		annotation SummarizationSetBy = User
+
+	column fraud_amount_caught
+		dataType: double
+		formatString: #,##0
+		lineageTag: cd62dee1-a02a-5634-9935-e71de9e45f5c
+		summarizeBy: none
+		sourceColumn: fraud_amount_caught
+
+		annotation SummarizationSetBy = User
+
+	column fraud_amount_recall
+		dataType: double
+		formatString: 0.0%
+		lineageTag: cde01a81-d9b8-578b-9853-6e2a63660b62
+		summarizeBy: none
+		sourceColumn: fraud_amount_recall
+
+		annotation SummarizationSetBy = User
+
+	column investigations
+		dataType: int64
+		formatString: 0
+		lineageTag: eadb18aa-c123-5fed-97bb-b0a26370b773
+		summarizeBy: none
+		sourceColumn: investigations
+
+		annotation SummarizationSetBy = User
+
+	column false_positives
+		dataType: int64
+		formatString: 0
+		lineageTag: d389af36-6b19-5b6f-b130-27332fc2f7a6
+		summarizeBy: none
+		sourceColumn: false_positives
+
+		annotation SummarizationSetBy = User
+
+	column fraud_savings
+		dataType: double
+		formatString: #,##0
+		lineageTag: b2129b81-e5df-5424-802b-fe2925918d9c
+		summarizeBy: none
+		sourceColumn: fraud_savings
+
+		annotation SummarizationSetBy = User
+
+	column net_benefit
+		dataType: double
+		formatString: #,##0
+		lineageTag: ed95340a-97bc-5b56-9fd7-e9b47ca88cb7
+		summarizeBy: none
+		sourceColumn: net_benefit
+
+		annotation SummarizationSetBy = User
+
+	column strategy
+		dataType: string
+		lineageTag: d5177e61-d7c3-582b-97ca-70d2bba61d19
+		summarizeBy: none
+		sourceColumn: strategy
+
+		annotation SummarizationSetBy = User
+
+	partition capacity_curve = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "capacity_curve.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Blanks = Table.TransformColumns(Promoted, {}, each if _ = "" then null else _),
+				    Typed = Table.TransformColumnTypes(Blanks, {{"pct_reviewed", Int64.Type}, {"precision_at_capacity", type number}, {"recall_at_capacity", type number}, {"fraud_amount_caught", type number}, {"fraud_amount_recall", type number}, {"investigations", Int64.Type}, {"false_positives", Int64.Type}, {"fraud_savings", type number}, {"net_benefit", type number}, {"strategy", type text}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

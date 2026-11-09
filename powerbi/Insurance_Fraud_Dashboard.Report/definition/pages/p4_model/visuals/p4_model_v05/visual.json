@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "p4_model_v05",
+  "position": {
+    "x": 672,
+    "y": 88,
+    "z": 4,
+    "height": 100,
+    "width": 192,
+    "tabOrder": 4
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Model Net Benefit (Cr)"
+                }
+              },
+              "queryRef": "_Measures.Model Net Benefit (Cr)",
+              "nativeQueryRef": "Model Net Benefit (Cr)"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

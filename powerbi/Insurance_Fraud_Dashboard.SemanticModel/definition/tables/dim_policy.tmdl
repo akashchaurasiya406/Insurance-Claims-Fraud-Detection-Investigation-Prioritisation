@@ -1,0 +1,173 @@
+table dim_policy
+	lineageTag: 50fc87ba-476e-5f43-8c3d-e19326248976
+
+	column policy_id
+		dataType: string
+		lineageTag: a1667e61-5dc9-5eac-8666-d60f1c05baac
+		summarizeBy: none
+		sourceColumn: policy_id
+
+		annotation SummarizationSetBy = User
+
+	column customer_id
+		dataType: string
+		lineageTag: b3f7b181-36cd-53e3-984b-f57101a64df9
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = User
+
+	column agent_id
+		dataType: string
+		lineageTag: 28528995-9a6a-5c7e-8baf-18d8b51ef077
+		summarizeBy: none
+		sourceColumn: agent_id
+
+		annotation SummarizationSetBy = User
+
+	column vehicle_make
+		dataType: string
+		lineageTag: 52d0e135-6dd0-5e18-87d5-2c885b14277f
+		summarizeBy: none
+		sourceColumn: vehicle_make
+
+		annotation SummarizationSetBy = User
+
+	column vehicle_model
+		dataType: string
+		lineageTag: 5881d270-af2d-5d0c-9f37-89dfb22f1871
+		summarizeBy: none
+		sourceColumn: vehicle_model
+
+		annotation SummarizationSetBy = User
+
+	column vehicle_segment
+		dataType: string
+		lineageTag: 071a1a51-8698-5688-aeb7-a8ee9e7600e9
+		summarizeBy: none
+		sourceColumn: vehicle_segment
+
+		annotation SummarizationSetBy = User
+
+	column fuel_type
+		dataType: string
+		lineageTag: dd2e9ed8-9cb1-5e50-83cb-04a86d2bf6ac
+		summarizeBy: none
+		sourceColumn: fuel_type
+
+		annotation SummarizationSetBy = User
+
+	column vehicle_age_years
+		dataType: int64
+		formatString: 0
+		lineageTag: 0848dbbe-5bdf-509d-ad01-86d9cddeeb1e
+		summarizeBy: none
+		sourceColumn: vehicle_age_years
+
+		annotation SummarizationSetBy = User
+
+	column policy_type
+		dataType: string
+		lineageTag: 9b120ef0-0b81-5347-924a-3971ae31530e
+		summarizeBy: none
+		sourceColumn: policy_type
+
+		annotation SummarizationSetBy = User
+
+	column zero_dep_addon
+		dataType: int64
+		formatString: 0
+		lineageTag: d653ec49-61c6-5014-b9ab-2d9f5b9e80d2
+		summarizeBy: none
+		sourceColumn: zero_dep_addon
+
+		annotation SummarizationSetBy = User
+
+	column idv
+		dataType: double
+		formatString: #,##0
+		lineageTag: 336b4cd8-8d3a-5419-b5c0-c6632618260e
+		summarizeBy: none
+		sourceColumn: idv
+
+		annotation SummarizationSetBy = User
+
+	column ncb_percent
+		dataType: int64
+		formatString: 0
+		lineageTag: 8aa6b78f-94b6-51b1-8c92-11294cb6f5ac
+		summarizeBy: none
+		sourceColumn: ncb_percent
+
+		annotation SummarizationSetBy = User
+
+	column voluntary_deductible
+		dataType: int64
+		formatString: 0
+		lineageTag: bac1c202-ef8f-54da-9add-2bdfea38f703
+		summarizeBy: none
+		sourceColumn: voluntary_deductible
+
+		annotation SummarizationSetBy = User
+
+	column annual_premium
+		dataType: double
+		formatString: #,##0
+		lineageTag: d507c53e-a52e-5b03-98c1-6dd6a51d07ac
+		summarizeBy: none
+		sourceColumn: annual_premium
+
+		annotation SummarizationSetBy = User
+
+	column policy_start_date
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: b01af064-1a61-545f-8b4c-8095ba6089f9
+		summarizeBy: none
+		sourceColumn: policy_start_date
+
+		annotation SummarizationSetBy = User
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column policy_end_date
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: af648e9f-6454-5310-9365-5cf6f963f1ea
+		summarizeBy: none
+		sourceColumn: policy_end_date
+
+		annotation SummarizationSetBy = User
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column is_renewal
+		dataType: int64
+		formatString: 0
+		lineageTag: 7ed68361-74fe-59e6-ba6c-5edd1142b986
+		summarizeBy: none
+		sourceColumn: is_renewal
+
+		annotation SummarizationSetBy = User
+
+	column is_new_business
+		dataType: int64
+		formatString: 0
+		lineageTag: 79a47210-c3c2-5171-b973-ee21b59cc016
+		summarizeBy: none
+		sourceColumn: is_new_business
+
+		annotation SummarizationSetBy = User
+
+	partition dim_policy = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "dim_policy.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Blanks = Table.TransformColumns(Promoted, {}, each if _ = "" then null else _),
+				    Typed = Table.TransformColumnTypes(Blanks, {{"policy_id", type text}, {"customer_id", type text}, {"agent_id", type text}, {"vehicle_make", type text}, {"vehicle_model", type text}, {"vehicle_segment", type text}, {"fuel_type", type text}, {"vehicle_age_years", Int64.Type}, {"policy_type", type text}, {"zero_dep_addon", Int64.Type}, {"idv", type number}, {"ncb_percent", Int64.Type}, {"voluntary_deductible", Int64.Type}, {"annual_premium", type number}, {"policy_start_date", type date}, {"policy_end_date", type date}, {"is_renewal", Int64.Type}, {"is_new_business", Int64.Type}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

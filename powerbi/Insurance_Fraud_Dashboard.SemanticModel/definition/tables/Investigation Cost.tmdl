@@ -1,0 +1,19 @@
+table 'Investigation Cost'
+	lineageTag: 2d0d53d2-5e72-5264-92e9-f16cb6808375
+
+	measure 'Investigation Cost Value' = SELECTEDVALUE ( 'Investigation Cost'[Investigation Cost], 5000 )
+		formatString: #,##0
+		lineageTag: 0c107bb6-c429-534b-b033-406e2d2c67b2
+
+	column 'Investigation Cost'
+		dataType: int64
+		formatString: #,##0
+		lineageTag: 9f543696-867f-5c93-8ac9-f4c8e9101bac
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		annotation SummarizationSetBy = User
+
+	partition 'Investigation Cost' = calculated
+		mode: import
+		source = GENERATESERIES ( 1000, 20000, 1000 )

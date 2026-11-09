@@ -1,0 +1,19 @@
+table 'Recovery Rate'
+	lineageTag: 9dc9b1d1-76e8-587c-b120-3d91108fce98
+
+	measure 'Recovery Rate Value' = SELECTEDVALUE ( 'Recovery Rate'[Recovery Rate], 0.6 )
+		formatString: 0%
+		lineageTag: b2bc878b-ab25-5b9c-8825-c7973b96682f
+
+	column 'Recovery Rate'
+		dataType: double
+		formatString: 0%
+		lineageTag: 5b99ce3b-ca85-5d76-9298-a0551e00c7be
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		annotation SummarizationSetBy = User
+
+	partition 'Recovery Rate' = calculated
+		mode: import
+		source = SELECTCOLUMNS ( GENERATESERIES ( 30, 100, 5 ), "Value", [Value] / 100 )

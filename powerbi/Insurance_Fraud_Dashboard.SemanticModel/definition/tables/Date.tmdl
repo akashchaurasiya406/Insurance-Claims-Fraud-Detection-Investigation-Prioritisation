@@ -1,0 +1,76 @@
+table Date
+	lineageTag: d6ea86f8-ceb0-5b06-8f41-9dde2cbee4c9
+	dataCategory: Time
+
+	column Date
+		dataType: dateTime
+		isKey
+		formatString: Short Date
+		lineageTag: d295537e-96cd-5f65-b092-d52cf9e63163
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = User
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: fd0f84a3-e57b-5e80-a655-bf26805f1f24
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Year]
+
+		annotation SummarizationSetBy = User
+
+	column Quarter
+		dataType: string
+		lineageTag: dcd9e994-4904-54a0-81f5-f8ebcbdd2395
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Quarter]
+
+		annotation SummarizationSetBy = User
+
+	column 'Month Num'
+		dataType: int64
+		formatString: 0
+		lineageTag: 17c04d2a-7ef5-59e9-9ec3-fae98c6e5596
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Month Num]
+
+		annotation SummarizationSetBy = User
+
+	column Month
+		dataType: string
+		lineageTag: 40305830-9bb6-5c2c-a5f0-f1077343e613
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Month]
+		sortByColumn: 'Month Num'
+
+		annotation SummarizationSetBy = User
+
+	column 'Year Month'
+		dataType: string
+		lineageTag: e3e2392f-1feb-5bca-894a-75bba5dc974e
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Year Month]
+
+		annotation SummarizationSetBy = User
+
+	partition Date = calculated
+		mode: import
+		source =
+				ADDCOLUMNS (
+				    CALENDAR ( DATE ( 2022, 1, 1 ), DATE ( 2025, 12, 31 ) ),
+				    "Year", YEAR ( [Date] ),
+				    "Quarter", "Q" & QUARTER ( [Date] ),
+				    "Month Num", MONTH ( [Date] ),
+				    "Month", FORMAT ( [Date], "MMM" ),
+				    "Year Month", FORMAT ( [Date], "yyyy-MM" )
+				)

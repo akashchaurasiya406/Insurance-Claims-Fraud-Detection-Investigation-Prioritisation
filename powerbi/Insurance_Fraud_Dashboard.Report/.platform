@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Insurance_Fraud_Dashboard"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "10836a30-58a6-5af2-93ff-885fb373521a"
+  }
+}

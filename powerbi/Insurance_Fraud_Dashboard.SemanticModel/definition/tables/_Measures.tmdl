@@ -1,0 +1,216 @@
+table _Measures
+	lineageTag: 2c307870-7758-5a69-98f1-479186dea604
+
+	measure 'Total Claims' = COUNTROWS ( fact_claims )
+		formatString: #,##0
+		displayFolder: 1. Portfolio KPIs
+		lineageTag: 3d7a71c9-77d5-5f6e-9dfa-81edcb9f7c77
+
+	measure 'Fraud Claims' = CALCULATE ( [Total Claims], fact_claims[is_fraud] = 1 )
+		formatString: #,##0
+		displayFolder: 1. Portfolio KPIs
+		lineageTag: 1cfe47c1-1b40-5a2a-81f0-258bba4c2499
+
+	measure 'Fraud Rate' = DIVIDE ( [Fraud Claims], [Total Claims] )
+		formatString: 0.0%
+		displayFolder: 1. Portfolio KPIs
+		lineageTag: ec08d0bb-d8a1-58df-92ad-eeb4ea120889
+
+	measure 'Total Claimed (Cr)' = DIVIDE ( SUM ( fact_claims[total_claim_amount] ), 1e7 )
+		formatString: #,##0.00
+		displayFolder: 1. Portfolio KPIs
+		lineageTag: dbc7e4cc-7ee7-5d0d-8283-4d60897eb833
+
+	measure 'Fraud Claimed (Cr)' = CALCULATE ( [Total Claimed (Cr)], fact_claims[is_fraud] = 1 )
+		formatString: #,##0.00
+		displayFolder: 1. Portfolio KPIs
+		lineageTag: f6e31000-9788-5b7d-be75-a61c25b610e7
+
+	measure 'Fraud Leakage (Cr)' = DIVIDE ( CALCULATE ( SUM ( fact_claims[settled_amount] ), fact_claims[is_fraud] = 1 ), 1e7 )
+		formatString: #,##0.00
+		displayFolder: 1. Portfolio KPIs
+		lineageTag: 7157fadd-182f-585d-9dd3-9770e745066c
+
+	measure 'Avg Claim Amount' = AVERAGE ( fact_claims[total_claim_amount] )
+		formatString: #,##0
+		displayFolder: 1. Portfolio KPIs
+		lineageTag: bd39ae99-5f0b-520d-a619-0f36b6d1bcac
+
+	measure 'Portfolio Fraud Rate' = CALCULATE ( [Fraud Rate], ALLSELECTED ( fact_claims ) )
+		formatString: 0.0%
+		displayFolder: 2. Comparison & Trend
+		lineageTag: 42ab6f61-a7be-5acd-b111-a44714dca717
+
+	measure 'Fraud Rate Lift' = DIVIDE ( [Fraud Rate], [Portfolio Fraud Rate] )
+		formatString: 0.0x
+		displayFolder: 2. Comparison & Trend
+		lineageTag: 9d762e2e-b1e0-5e60-b5a8-4d87137bd063
+
+	measure 'Fraud Rate 3M Rolling' = CALCULATE ( [Fraud Rate], DATESINPERIOD ( 'Date'[Date], MAX ( 'Date'[Date] ), -3, MONTH ) )
+		formatString: 0.0%
+		displayFolder: 2. Comparison & Trend
+		lineageTag: 12132b93-4258-56d0-bb8a-e788fcc4194e
+
+	measure 'Fraud Rate YoY Change (pts)' =
+			VAR CurrentRate = [Fraud Rate]
+			VAR LastYear = CALCULATE ( [Fraud Rate], SAMEPERIODLASTYEAR ( 'Date'[Date] ) )
+			RETURN IF ( NOT ISBLANK ( LastYear ), CurrentRate - LastYear )
+		formatString: +0.0%;-0.0%;0.0%
+		displayFolder: 2. Comparison & Trend
+		lineageTag: 2e55fdd9-f2bf-5285-b02d-bcfc7f12972c
+
+	measure 'Garage Fraud Rate (min 25 claims)' = IF ( [Total Claims] >= 25, [Fraud Rate] )
+		formatString: 0.0%
+		displayFolder: 3. Network
+		lineageTag: 3c756b1a-a6d2-5881-ab72-17df4391f4fb
+
+	measure 'Garage Risk Rank' =
+			IF (
+			    HASONEVALUE ( dim_garage[garage_id] ) && [Total Claims] >= 25,
+			    RANKX (
+			        FILTER ( ALL ( dim_garage[garage_id] ), CALCULATE ( [Total Claims] ) >= 25 ),
+			        [Fraud Rate], , DESC, DENSE
+			    )
+			)
+		formatString: 0
+		displayFolder: 3. Network
+		lineageTag: 227f6727-2a2d-5662-ab71-d127602db202
+
+	measure 'High-Risk Garage Flag' = IF ( [Fraud Rate] > 2 * [Portfolio Fraud Rate] && [Total Claims] >= 25, "Review", "OK" )
+		displayFolder: 3. Network
+		lineageTag: 149a15e7-03e4-54ed-9302-fed6956bfbd1
+
+	measure 'Scored Claims' = CALCULATE ( [Total Claims], fact_claims[is_scored] = 1 )
+		formatString: #,##0
+		displayFolder: 4. Model vs Rules
+		lineageTag: 0f25cef6-e89d-5bb4-9ef7-b79dd43f8096
+
+	measure 'Model Flagged' = CALCULATE ( [Total Claims], fact_claims[flag_for_siu] = 1 )
+		formatString: #,##0
+		displayFolder: 4. Model vs Rules
+		lineageTag: 820631c8-63fb-5ffa-9145-5cb17f371ba9
+
+	measure 'Rules Flagged' = CALCULATE ( [Total Claims], fact_claims[rules_flag] = 1 )
+		formatString: #,##0
+		displayFolder: 4. Model vs Rules
+		lineageTag: ed5a1433-c4b0-5b98-947d-4eeae3c3b872
+
+	measure 'Model True Frauds' = CALCULATE ( [Fraud Claims], fact_claims[flag_for_siu] = 1 )
+		formatString: #,##0
+		displayFolder: 4. Model vs Rules
+		lineageTag: 86fe3913-daef-5b99-8308-1747119cece3
+
+	measure 'Rules True Frauds' = CALCULATE ( [Fraud Claims], fact_claims[rules_flag] = 1 )
+		formatString: #,##0
+		displayFolder: 4. Model vs Rules
+		lineageTag: 19385460-9f63-537a-963b-74edbd71e1da
+
+	measure 'Model Hit Rate' = DIVIDE ( [Model True Frauds], [Model Flagged] )
+		formatString: 0.0%
+		displayFolder: 4. Model vs Rules
+		lineageTag: 25a7087e-e357-5a5e-91a5-64dfcaef3f08
+
+	measure 'Rules Hit Rate' = DIVIDE ( [Rules True Frauds], [Rules Flagged] )
+		formatString: 0.0%
+		displayFolder: 4. Model vs Rules
+		lineageTag: e62c6f68-933e-5c3e-99ff-33cb7b3e4c0e
+
+	measure 'Fraud Value 2025' = CALCULATE ( SUM ( fact_claims[total_claim_amount] ), fact_claims[is_fraud] = 1, fact_claims[is_scored] = 1 )
+		formatString: #,##0
+		displayFolder: 4. Model vs Rules
+		lineageTag: e37e00b6-dd8f-5f33-a9f8-a86a496d3218
+
+	measure 'Model Fraud Value Caught' = CALCULATE ( SUM ( fact_claims[total_claim_amount] ), fact_claims[is_fraud] = 1, fact_claims[flag_for_siu] = 1 )
+		formatString: #,##0
+		displayFolder: 4. Model vs Rules
+		lineageTag: aac7771d-db5d-561c-ad76-5adb701d3448
+
+	measure 'Rules Fraud Value Caught' = CALCULATE ( SUM ( fact_claims[total_claim_amount] ), fact_claims[is_fraud] = 1, fact_claims[rules_flag] = 1 )
+		formatString: #,##0
+		displayFolder: 4. Model vs Rules
+		lineageTag: 4ce24038-7cc2-5e2b-80d7-b8bd46707f90
+
+	measure 'Model Value Recall' = DIVIDE ( [Model Fraud Value Caught], [Fraud Value 2025] )
+		formatString: 0.0%
+		displayFolder: 4. Model vs Rules
+		lineageTag: f97bef13-f4a8-58c2-9de5-bc4b86391061
+
+	measure 'Rules Value Recall' = DIVIDE ( [Rules Fraud Value Caught], [Fraud Value 2025] )
+		formatString: 0.0%
+		displayFolder: 4. Model vs Rules
+		lineageTag: c0c1123f-89aa-57c3-b5d0-229a67637170
+
+	measure 'Model Net Benefit (Cr)' =
+			VAR Savings = [Recovery Rate Value] * [Model Fraud Value Caught]
+			VAR ReviewCost = [Investigation Cost Value] * [Model Flagged]
+			VAR FalsePos = [Model Flagged] - [Model True Frauds]
+			VAR Friction = [Friction Cost Value] * FalsePos
+			RETURN DIVIDE ( Savings - ReviewCost - Friction, 1e7 )
+		formatString: #,##0.00
+		displayFolder: 5. Business Case
+		lineageTag: dce4ab2d-31d8-55d8-8bad-084c76bacbb1
+
+	measure 'Rules Net Benefit (Cr)' =
+			VAR Savings = [Recovery Rate Value] * [Rules Fraud Value Caught]
+			VAR ReviewCost = [Investigation Cost Value] * [Rules Flagged]
+			VAR FalsePos = [Rules Flagged] - [Rules True Frauds]
+			VAR Friction = [Friction Cost Value] * FalsePos
+			RETURN DIVIDE ( Savings - ReviewCost - Friction, 1e7 )
+		formatString: #,##0.00
+		displayFolder: 5. Business Case
+		lineageTag: 82966ea6-67b5-5a85-bed2-fa723afe20ea
+
+	measure 'Net Benefit Uplift (Cr)' = [Model Net Benefit (Cr)] - [Rules Net Benefit (Cr)]
+		formatString: #,##0.00
+		displayFolder: 5. Business Case
+		lineageTag: 90640832-8c6e-55dd-b0a1-9a1c66f3c4d7
+
+	measure 'Capacity Value Recall' = AVERAGE ( capacity_curve[fraud_amount_recall] )
+		formatString: 0.0%
+		displayFolder: 5. Business Case
+		lineageTag: 4b5aa39b-c245-558d-9c68-364e2a090db9
+
+	measure 'Capacity Net Benefit (Cr)' = DIVIDE ( SUM ( capacity_curve[net_benefit] ), 1e7 )
+		formatString: #,##0.00
+		displayFolder: 5. Business Case
+		lineageTag: adaf2558-9d3d-51be-a8ed-b562a6074342
+
+	measure 'Feature Importance' = SUM ( feature_importance[importance] )
+		formatString: 0.0000
+		displayFolder: 5. Business Case
+		lineageTag: 96ba6842-a148-5c68-956d-78f0215675b2
+
+	measure 'Queue Size' = CALCULATE ( [Total Claims], fact_claims[flag_for_siu] = 1 )
+		formatString: #,##0
+		displayFolder: 6. SIU Queue
+		lineageTag: 1dd5be8b-082b-5fa6-81f7-2175e2ab1adc
+
+	measure 'Queue Expected Loss (Cr)' = DIVIDE ( CALCULATE ( SUM ( fact_claims[expected_fraud_loss] ), fact_claims[flag_for_siu] = 1 ), 1e7 )
+		formatString: #,##0.00
+		displayFolder: 6. SIU Queue
+		lineageTag: f0d2e3de-db5c-5cb6-ac32-448fb3ef1c24
+
+	measure 'Risk Band Colour' =
+			SWITCH ( SELECTEDVALUE ( fact_claims[risk_band] ),
+			    "1-Critical", "#e34948",
+			    "2-High", "#eb6834",
+			    "3-Medium", "#eda100",
+			    "#1baf7a"
+			)
+		displayFolder: 6. SIU Queue
+		lineageTag: e882e8ee-46ad-5c0b-9411-dbd42d001b06
+
+	column Value
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 4de6b10c-58cd-5b1c-931e-c47ae14e7589
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Value]
+
+		annotation SummarizationSetBy = User
+
+	partition _Measures = calculated
+		mode: import
+		source = {1}

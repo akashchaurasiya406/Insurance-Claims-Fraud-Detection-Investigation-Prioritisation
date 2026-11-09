@@ -1,0 +1,19 @@
+relationship f1f65a15-933d-5dad-8f3f-2f77579dae72
+	fromColumn: fact_claims.incident_date
+	toColumn: Date.Date
+
+relationship 0cffd34d-4f4c-58f2-ae7c-1f7ee8253f03
+	fromColumn: fact_claims.policy_id
+	toColumn: dim_policy.policy_id
+
+relationship d04f1664-68d4-5b26-b0fb-4ddebb8c385d
+	fromColumn: fact_claims.customer_id
+	toColumn: dim_customer.customer_id
+
+relationship 7979f4aa-15dd-57a2-86e0-9557a03996bf
+	fromColumn: fact_claims.agent_id
+	toColumn: dim_agent.agent_id
+
+relationship 387ea56b-f165-5a14-91cc-1242fb47301e
+	fromColumn: fact_claims.garage_id
+	toColumn: dim_garage.garage_id

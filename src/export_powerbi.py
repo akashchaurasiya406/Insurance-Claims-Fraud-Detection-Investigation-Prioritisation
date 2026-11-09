@@ -62,6 +62,9 @@ def main() -> None:
          "flag_for_siu", "rules_flag", "reason_codes"]]
     fact = fact.merge(scored, on="claim_id", how="left")
     fact["is_scored"] = fact.fraud_probability.notna().astype(int)
+    # nullable whole numbers: write "22", not "22.0", so Power BI can type them as whole numbers
+    for col in ["incident_hour", "report_delay_days", "priority_rank", "flag_for_siu", "rules_flag"]:
+        fact[col] = fact[col].round().astype("Int64")
     fact.to_csv(OUT / "fact_claims.csv", index=False)
 
     claim_policies = "SELECT DISTINCT policy_id FROM claims"

@@ -1,0 +1,133 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "p4_model_v13",
+  "position": {
+    "x": 672,
+    "y": 204,
+    "z": 12,
+    "height": 220,
+    "width": 592,
+    "tabOrder": 12
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "model_comparison"
+                    }
+                  },
+                  "Property": "model"
+                }
+              },
+              "queryRef": "model_comparison.model",
+              "nativeQueryRef": "model"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "model_comparison"
+                    }
+                  },
+                  "Property": "pr_auc"
+                }
+              },
+              "queryRef": "model_comparison.pr_auc",
+              "nativeQueryRef": "pr_auc"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "model_comparison"
+                    }
+                  },
+                  "Property": "precision_at_capacity"
+                }
+              },
+              "queryRef": "model_comparison.precision_at_capacity",
+              "nativeQueryRef": "precision_at_capacity"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "model_comparison"
+                    }
+                  },
+                  "Property": "fraud_amount_recall"
+                }
+              },
+              "queryRef": "model_comparison.fraud_amount_recall",
+              "nativeQueryRef": "fraud_amount_recall"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "model_comparison"
+                    }
+                  },
+                  "Property": "net_benefit"
+                }
+              },
+              "queryRef": "model_comparison.net_benefit",
+              "nativeQueryRef": "net_benefit"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "model_comparison"
+                  }
+                },
+                "Property": "model"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Model comparison (2025 hold-out)'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

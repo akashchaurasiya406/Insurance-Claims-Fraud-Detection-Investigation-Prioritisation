@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "p1_overview_v06",
+  "position": {
+    "x": 772,
+    "y": 88,
+    "z": 5,
+    "height": 110,
+    "width": 240,
+    "tabOrder": 5
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Fraud Claimed (Cr)"
+                }
+              },
+              "queryRef": "_Measures.Fraud Claimed (Cr)",
+              "nativeQueryRef": "Fraud Claimed (Cr)"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

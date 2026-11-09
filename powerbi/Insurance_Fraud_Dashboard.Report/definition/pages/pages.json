@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/pagesMetadata/1.0.0/schema.json",
+  "pageOrder": [
+    "p1_overview",
+    "p2_patterns",
+    "p3_network",
+    "p4_model",
+    "p5_queue"
+  ],
+  "activePageName": "p1_overview"
+}

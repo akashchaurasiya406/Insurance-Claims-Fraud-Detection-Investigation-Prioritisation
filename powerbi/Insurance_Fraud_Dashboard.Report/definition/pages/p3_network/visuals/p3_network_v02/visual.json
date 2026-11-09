@@ -1,0 +1,175 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "p3_network_v02",
+  "position": {
+    "x": 16,
+    "y": 88,
+    "z": 1,
+    "height": 616,
+    "width": 760,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_garage"
+                    }
+                  },
+                  "Property": "garage_id"
+                }
+              },
+              "queryRef": "dim_garage.garage_id",
+              "nativeQueryRef": "garage_id"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_garage"
+                    }
+                  },
+                  "Property": "garage_name"
+                }
+              },
+              "queryRef": "dim_garage.garage_name",
+              "nativeQueryRef": "garage_name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_garage"
+                    }
+                  },
+                  "Property": "city"
+                }
+              },
+              "queryRef": "dim_garage.city",
+              "nativeQueryRef": "city"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_garage"
+                    }
+                  },
+                  "Property": "is_network_garage"
+                }
+              },
+              "queryRef": "dim_garage.is_network_garage",
+              "nativeQueryRef": "is_network_garage"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Total Claims"
+                }
+              },
+              "queryRef": "_Measures.Total Claims",
+              "nativeQueryRef": "Total Claims"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Garage Fraud Rate (min 25 claims)"
+                }
+              },
+              "queryRef": "_Measures.Garage Fraud Rate (min 25 claims)",
+              "nativeQueryRef": "Garage Fraud Rate (min 25 claims)"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Garage Risk Rank"
+                }
+              },
+              "queryRef": "_Measures.Garage Risk Rank",
+              "nativeQueryRef": "Garage Risk Rank"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "High-Risk Garage Flag"
+                }
+              },
+              "queryRef": "_Measures.High-Risk Garage Flag",
+              "nativeQueryRef": "High-Risk Garage Flag"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "_Measures"
+                  }
+                },
+                "Property": "Garage Fraud Rate (min 25 claims)"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Garages ranked by fraud rate'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "p5_queue_v04",
+  "position": {
+    "x": 232,
+    "y": 88,
+    "z": 3,
+    "height": 100,
+    "width": 204,
+    "tabOrder": 3
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Queue Expected Loss (Cr)"
+                }
+              },
+              "queryRef": "_Measures.Queue Expected Loss (Cr)",
+              "nativeQueryRef": "Queue Expected Loss (Cr)"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

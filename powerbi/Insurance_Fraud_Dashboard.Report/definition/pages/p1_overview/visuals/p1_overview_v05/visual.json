@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "p1_overview_v05",
+  "position": {
+    "x": 520,
+    "y": 88,
+    "z": 4,
+    "height": 110,
+    "width": 240,
+    "tabOrder": 4
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Total Claimed (Cr)"
+                }
+              },
+              "queryRef": "_Measures.Total Claimed (Cr)",
+              "nativeQueryRef": "Total Claimed (Cr)"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

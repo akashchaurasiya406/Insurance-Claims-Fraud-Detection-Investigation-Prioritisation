@@ -1,0 +1,274 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "p5_queue_v06",
+  "position": {
+    "x": 16,
+    "y": 204,
+    "z": 5,
+    "height": 500,
+    "width": 1248,
+    "tabOrder": 5
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_claims"
+                    }
+                  },
+                  "Property": "priority_rank"
+                }
+              },
+              "queryRef": "fact_claims.priority_rank",
+              "nativeQueryRef": "priority_rank"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_claims"
+                    }
+                  },
+                  "Property": "claim_id"
+                }
+              },
+              "queryRef": "fact_claims.claim_id",
+              "nativeQueryRef": "claim_id"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_claims"
+                    }
+                  },
+                  "Property": "incident_date"
+                }
+              },
+              "queryRef": "fact_claims.incident_date",
+              "nativeQueryRef": "incident_date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_claims"
+                    }
+                  },
+                  "Property": "claim_type"
+                }
+              },
+              "queryRef": "fact_claims.claim_type",
+              "nativeQueryRef": "claim_type"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_claims"
+                    }
+                  },
+                  "Property": "incident_severity"
+                }
+              },
+              "queryRef": "fact_claims.incident_severity",
+              "nativeQueryRef": "incident_severity"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_claims"
+                    }
+                  },
+                  "Property": "total_claim_amount"
+                }
+              },
+              "queryRef": "fact_claims.total_claim_amount",
+              "nativeQueryRef": "total_claim_amount"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_claims"
+                    }
+                  },
+                  "Property": "fraud_probability"
+                }
+              },
+              "queryRef": "fact_claims.fraud_probability",
+              "nativeQueryRef": "fraud_probability"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_claims"
+                    }
+                  },
+                  "Property": "expected_fraud_loss"
+                }
+              },
+              "queryRef": "fact_claims.expected_fraud_loss",
+              "nativeQueryRef": "expected_fraud_loss"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_claims"
+                    }
+                  },
+                  "Property": "risk_band"
+                }
+              },
+              "queryRef": "fact_claims.risk_band",
+              "nativeQueryRef": "risk_band"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_claims"
+                    }
+                  },
+                  "Property": "reason_codes"
+                }
+              },
+              "queryRef": "fact_claims.reason_codes",
+              "nativeQueryRef": "reason_codes"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fact_claims"
+                    }
+                  },
+                  "Property": "fraud_label"
+                }
+              },
+              "queryRef": "fact_claims.fraud_label",
+              "nativeQueryRef": "fraud_label"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "fact_claims"
+                  }
+                },
+                "Property": "priority_rank"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Investigation queue (flag_for_siu = 1)'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "queue_only",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "fact_claims"
+              }
+            },
+            "Property": "flag_for_siu"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "f",
+              "Entity": "fact_claims",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "f"
+                          }
+                        },
+                        "Property": "flag_for_siu"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "1L"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,427 @@
+table fact_claims
+	lineageTag: 0a76a1b4-2678-59c5-abf3-e79cf0f36a06
+
+	column claim_id
+		dataType: string
+		lineageTag: 4adb8acb-d061-5f79-95d8-cc973e5272ea
+		summarizeBy: none
+		sourceColumn: claim_id
+
+		annotation SummarizationSetBy = User
+
+	column policy_id
+		dataType: string
+		lineageTag: 27f0c416-f8bf-59c6-8201-845146348d04
+		summarizeBy: none
+		sourceColumn: policy_id
+
+		annotation SummarizationSetBy = User
+
+	column customer_id
+		dataType: string
+		lineageTag: 8a284e1e-2574-5af7-8cb0-7cf5657c0ebf
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = User
+
+	column agent_id
+		dataType: string
+		lineageTag: 717a5bc0-96f4-507a-9b9d-433247a47ad2
+		summarizeBy: none
+		sourceColumn: agent_id
+
+		annotation SummarizationSetBy = User
+
+	column garage_id
+		dataType: string
+		lineageTag: 8b5561ae-bc6d-50a0-9884-38fceed58f0d
+		summarizeBy: none
+		sourceColumn: garage_id
+
+		annotation SummarizationSetBy = User
+
+	column incident_date
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: e75a0b6b-9655-57d3-a000-481d96d0f1af
+		summarizeBy: none
+		sourceColumn: incident_date
+
+		annotation SummarizationSetBy = User
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column report_date
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: a72525f4-a0ef-5931-a297-80c7140852f1
+		summarizeBy: none
+		sourceColumn: report_date
+
+		annotation SummarizationSetBy = User
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column incident_year
+		dataType: int64
+		formatString: 0
+		lineageTag: 0480e6d3-9345-5a4b-8b75-2a40d001759a
+		summarizeBy: none
+		sourceColumn: incident_year
+
+		annotation SummarizationSetBy = User
+
+	column claim_type
+		dataType: string
+		lineageTag: 6062f35d-ead4-59e6-b911-7a3ea2ee6069
+		summarizeBy: none
+		sourceColumn: claim_type
+
+		annotation SummarizationSetBy = User
+
+	column incident_severity
+		dataType: string
+		lineageTag: b702263f-bf44-5965-bec8-f1a76d79f6ae
+		summarizeBy: none
+		sourceColumn: incident_severity
+
+		annotation SummarizationSetBy = User
+
+	column claim_channel
+		dataType: string
+		lineageTag: e3ccc686-cdfc-5b3c-83c0-91f3d87d02c6
+		summarizeBy: none
+		sourceColumn: claim_channel
+
+		annotation SummarizationSetBy = User
+
+	column incident_city
+		dataType: string
+		lineageTag: d0d13cb6-e548-57f6-ab0c-ea0ac31a685c
+		summarizeBy: none
+		sourceColumn: incident_city
+
+		annotation SummarizationSetBy = User
+
+	column incident_hour
+		dataType: int64
+		formatString: 0
+		lineageTag: ceb29e45-d9b5-54d6-986d-2cbe4610befa
+		summarizeBy: none
+		sourceColumn: incident_hour
+
+		annotation SummarizationSetBy = User
+
+	column police_report_filed
+		dataType: int64
+		formatString: 0
+		lineageTag: e5699f2f-f508-50b1-b1af-ea4d945c9f61
+		summarizeBy: none
+		sourceColumn: police_report_filed
+
+		annotation SummarizationSetBy = User
+
+	column witness_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 17fa24b3-19a2-5ad8-af50-b67acef6122f
+		summarizeBy: none
+		sourceColumn: witness_count
+
+		annotation SummarizationSetBy = User
+
+	column claimant_has_lawyer
+		dataType: int64
+		formatString: 0
+		lineageTag: 6e444174-ecb6-570f-b62d-1650cef745fa
+		summarizeBy: none
+		sourceColumn: claimant_has_lawyer
+
+		annotation SummarizationSetBy = User
+
+	column vehicle_claim_amount
+		dataType: double
+		formatString: #,##0
+		lineageTag: 6694bc76-b3f6-5ded-9375-b11de6e61110
+		summarizeBy: none
+		sourceColumn: vehicle_claim_amount
+
+		annotation SummarizationSetBy = User
+
+	column injury_claim_amount
+		dataType: double
+		formatString: #,##0
+		lineageTag: 45c5fb24-3920-559f-bbb0-529717df32f1
+		summarizeBy: none
+		sourceColumn: injury_claim_amount
+
+		annotation SummarizationSetBy = User
+
+	column property_claim_amount
+		dataType: double
+		formatString: #,##0
+		lineageTag: 8ed6e61a-d002-5d65-8064-51c9e84ae492
+		summarizeBy: none
+		sourceColumn: property_claim_amount
+
+		annotation SummarizationSetBy = User
+
+	column total_claim_amount
+		dataType: double
+		formatString: #,##0
+		lineageTag: 1289bdef-52ed-5e99-bf6b-d426f72ac181
+		summarizeBy: none
+		sourceColumn: total_claim_amount
+
+		annotation SummarizationSetBy = User
+
+	column days_policy_to_incident
+		dataType: int64
+		formatString: 0
+		lineageTag: a4af283b-de33-574e-8a1b-76aea1878411
+		summarizeBy: none
+		sourceColumn: days_policy_to_incident
+
+		annotation SummarizationSetBy = User
+
+	column report_delay_days
+		dataType: int64
+		formatString: 0
+		lineageTag: e1117791-92d2-5a19-b98c-1c4844010f66
+		summarizeBy: none
+		sourceColumn: report_delay_days
+
+		annotation SummarizationSetBy = User
+
+	column is_fraud
+		dataType: int64
+		formatString: 0
+		lineageTag: a9134334-a923-5030-85d7-699cbe53bc05
+		summarizeBy: none
+		sourceColumn: is_fraud
+
+		annotation SummarizationSetBy = User
+
+	column claim_status
+		dataType: string
+		lineageTag: 2871dc7c-5db6-52c0-b956-998908f32ab0
+		summarizeBy: none
+		sourceColumn: claim_status
+
+		annotation SummarizationSetBy = User
+
+	column settled_amount
+		dataType: double
+		formatString: #,##0
+		lineageTag: 75c29728-4679-5c83-ac97-d7455fc12179
+		summarizeBy: none
+		sourceColumn: settled_amount
+
+		annotation SummarizationSetBy = User
+
+	column red_flag_score
+		dataType: int64
+		formatString: 0
+		lineageTag: c53142e1-3199-5d40-bc4d-21c8c12af180
+		summarizeBy: none
+		sourceColumn: red_flag_score
+
+		annotation SummarizationSetBy = User
+
+	column rf_early_claim
+		dataType: int64
+		formatString: 0
+		lineageTag: 15826438-58ab-5c56-8627-a8a7da8c1922
+		summarizeBy: none
+		sourceColumn: rf_early_claim
+
+		annotation SummarizationSetBy = User
+
+	column rf_near_expiry
+		dataType: int64
+		formatString: 0
+		lineageTag: 150cef08-25e3-54e3-9292-aed0913bb917
+		summarizeBy: none
+		sourceColumn: rf_near_expiry
+
+		annotation SummarizationSetBy = User
+
+	column rf_late_report
+		dataType: int64
+		formatString: 0
+		lineageTag: b98f9e97-3878-5618-8af7-7c02798e55c0
+		summarizeBy: none
+		sourceColumn: rf_late_report
+
+		annotation SummarizationSetBy = User
+
+	column rf_night_incident
+		dataType: int64
+		formatString: 0
+		lineageTag: b63afa0f-5012-5446-b33e-202c9185be97
+		summarizeBy: none
+		sourceColumn: rf_night_incident
+
+		annotation SummarizationSetBy = User
+
+	column rf_no_police_report
+		dataType: int64
+		formatString: 0
+		lineageTag: bb978fa1-67b1-514a-9e4a-580b9836b6af
+		summarizeBy: none
+		sourceColumn: rf_no_police_report
+
+		annotation SummarizationSetBy = User
+
+	column rf_high_claim_vs_idv
+		dataType: int64
+		formatString: 0
+		lineageTag: 7838497c-8a38-57b2-bcde-6f1f686b9063
+		summarizeBy: none
+		sourceColumn: rf_high_claim_vs_idv
+
+		annotation SummarizationSetBy = User
+
+	column rf_repeat_claimant
+		dataType: int64
+		formatString: 0
+		lineageTag: b31777d8-eafb-529f-b867-567efe99b9cc
+		summarizeBy: none
+		sourceColumn: rf_repeat_claimant
+
+		annotation SummarizationSetBy = User
+
+	column rf_lawyer_involved
+		dataType: int64
+		formatString: 0
+		lineageTag: fb4c0e93-c36d-5814-9b63-2ddaafdee26b
+		summarizeBy: none
+		sourceColumn: rf_lawyer_involved
+
+		annotation SummarizationSetBy = User
+
+	column rf_old_vehicle_theft
+		dataType: int64
+		formatString: 0
+		lineageTag: 4b910eb5-bac4-5b3a-8b71-a77b9def7a46
+		summarizeBy: none
+		sourceColumn: rf_old_vehicle_theft
+
+		annotation SummarizationSetBy = User
+
+	column rf_new_business
+		dataType: int64
+		formatString: 0
+		lineageTag: 97c0fca0-c5b3-5a54-8793-bcd0b7531c00
+		summarizeBy: none
+		sourceColumn: rf_new_business
+
+		annotation SummarizationSetBy = User
+
+	column policy_age_bucket
+		dataType: string
+		lineageTag: 1857c897-db90-5348-9bf1-c38311987ccc
+		summarizeBy: none
+		sourceColumn: policy_age_bucket
+
+		annotation SummarizationSetBy = User
+
+	column report_delay_bucket
+		dataType: string
+		lineageTag: 1239696a-5e40-5cbe-96f4-77e0a6aec0b5
+		summarizeBy: none
+		sourceColumn: report_delay_bucket
+
+		annotation SummarizationSetBy = User
+
+	column fraud_label
+		dataType: string
+		lineageTag: dd2677f3-aea3-56ac-8f08-aebb769cb261
+		summarizeBy: none
+		sourceColumn: fraud_label
+
+		annotation SummarizationSetBy = User
+
+	column fraud_probability
+		dataType: double
+		formatString: 0.0%
+		lineageTag: 81e64db4-5a13-5e73-a64f-19d2195cdd9a
+		summarizeBy: none
+		sourceColumn: fraud_probability
+
+		annotation SummarizationSetBy = User
+
+	column expected_fraud_loss
+		dataType: double
+		formatString: #,##0
+		lineageTag: 765a9519-c080-58a3-8d30-9bd592b3ba9b
+		summarizeBy: none
+		sourceColumn: expected_fraud_loss
+
+		annotation SummarizationSetBy = User
+
+	column priority_rank
+		dataType: int64
+		formatString: 0
+		lineageTag: 0887281f-6df3-535f-b447-9b7a2d33c091
+		summarizeBy: none
+		sourceColumn: priority_rank
+
+		annotation SummarizationSetBy = User
+
+	column risk_band
+		dataType: string
+		lineageTag: 3990300c-8b34-5a3b-a348-d5057d756d80
+		summarizeBy: none
+		sourceColumn: risk_band
+
+		annotation SummarizationSetBy = User
+
+	column flag_for_siu
+		dataType: int64
+		formatString: 0
+		lineageTag: 0f7e25bd-1959-5a38-8333-d6f1cad4b9b5
+		summarizeBy: none
+		sourceColumn: flag_for_siu
+
+		annotation SummarizationSetBy = User
+
+	column rules_flag
+		dataType: int64
+		formatString: 0
+		lineageTag: 50490df7-e5af-564f-8eb0-e3bdff05ca41
+		summarizeBy: none
+		sourceColumn: rules_flag
+
+		annotation SummarizationSetBy = User
+
+	column reason_codes
+		dataType: string
+		lineageTag: 94355a0b-decc-559e-b95c-9133f23f9d55
+		summarizeBy: none
+		sourceColumn: reason_codes
+
+		annotation SummarizationSetBy = User
+
+	column is_scored
+		dataType: int64
+		formatString: 0
+		lineageTag: caed74f9-ba12-50e8-a43c-4ce78a889148
+		summarizeBy: none
+		sourceColumn: is_scored
+
+		annotation SummarizationSetBy = User
+
+	partition fact_claims = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "fact_claims.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Blanks = Table.TransformColumns(Promoted, {}, each if _ = "" then null else _),
+				    Typed = Table.TransformColumnTypes(Blanks, {{"claim_id", type text}, {"policy_id", type text}, {"customer_id", type text}, {"agent_id", type text}, {"garage_id", type text}, {"incident_date", type date}, {"report_date", type date}, {"incident_year", Int64.Type}, {"claim_type", type text}, {"incident_severity", type text}, {"claim_channel", type text}, {"incident_city", type text}, {"incident_hour", Int64.Type}, {"police_report_filed", Int64.Type}, {"witness_count", Int64.Type}, {"claimant_has_lawyer", Int64.Type}, {"vehicle_claim_amount", type number}, {"injury_claim_amount", type number}, {"property_claim_amount", type number}, {"total_claim_amount", type number}, {"days_policy_to_incident", Int64.Type}, {"report_delay_days", Int64.Type}, {"is_fraud", Int64.Type}, {"claim_status", type text}, {"settled_amount", type number}, {"red_flag_score", Int64.Type}, {"rf_early_claim", Int64.Type}, {"rf_near_expiry", Int64.Type}, {"rf_late_report", Int64.Type}, {"rf_night_incident", Int64.Type}, {"rf_no_police_report", Int64.Type}, {"rf_high_claim_vs_idv", Int64.Type}, {"rf_repeat_claimant", Int64.Type}, {"rf_lawyer_involved", Int64.Type}, {"rf_old_vehicle_theft", Int64.Type}, {"rf_new_business", Int64.Type}, {"policy_age_bucket", type text}, {"report_delay_bucket", type text}, {"fraud_label", type text}, {"fraud_probability", type number}, {"expected_fraud_loss", type number}, {"priority_rank", Int64.Type}, {"risk_band", type text}, {"flag_for_siu", Int64.Type}, {"rules_flag", Int64.Type}, {"reason_codes", type text}, {"is_scored", Int64.Type}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "p4_model_v07",
+  "position": {
+    "x": 1072,
+    "y": 88,
+    "z": 6,
+    "height": 100,
+    "width": 192,
+    "tabOrder": 6
+  },
+  "visual": {
+    "visualType": "card",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Net Benefit Uplift (Cr)"
+                }
+              },
+              "queryRef": "_Measures.Net Benefit Uplift (Cr)",
+              "nativeQueryRef": "Net Benefit Uplift (Cr)"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

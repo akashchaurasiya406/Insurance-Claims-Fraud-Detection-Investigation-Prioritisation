@@ -1,0 +1,84 @@
+table dim_customer
+	lineageTag: 2962a128-43b6-510b-8eef-41c06e00176a
+
+	column customer_id
+		dataType: string
+		lineageTag: 31b50212-fb8a-538f-9b75-4715d8c90b28
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = User
+
+	column age
+		dataType: int64
+		formatString: 0
+		lineageTag: 2ec299f3-0875-535a-8179-91dc85d32ff3
+		summarizeBy: none
+		sourceColumn: age
+
+		annotation SummarizationSetBy = User
+
+	column gender
+		dataType: string
+		lineageTag: a059f3f6-a38c-5e19-a665-3bd28501d80d
+		summarizeBy: none
+		sourceColumn: gender
+
+		annotation SummarizationSetBy = User
+
+	column occupation
+		dataType: string
+		lineageTag: ec2a5c48-45bc-596e-8f3d-b1842bc1c991
+		summarizeBy: none
+		sourceColumn: occupation
+
+		annotation SummarizationSetBy = User
+
+	column annual_income
+		dataType: double
+		formatString: #,##0
+		lineageTag: 67a588c2-481e-596f-9af1-bf5cbe5a5c40
+		summarizeBy: none
+		sourceColumn: annual_income
+
+		annotation SummarizationSetBy = User
+
+	column city
+		dataType: string
+		lineageTag: 3a2a8196-3152-5560-8893-b6aab906ede1
+		summarizeBy: none
+		sourceColumn: city
+
+		annotation SummarizationSetBy = User
+
+	column state
+		dataType: string
+		lineageTag: 40af14dd-ef97-58c4-981b-a98e3008ada1
+		summarizeBy: none
+		sourceColumn: state
+
+		annotation SummarizationSetBy = User
+
+	column customer_since
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 59ef2c54-17e8-5f3e-b798-28823c8ffaf1
+		summarizeBy: none
+		sourceColumn: customer_since
+
+		annotation SummarizationSetBy = User
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition dim_customer = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "dim_customer.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Blanks = Table.TransformColumns(Promoted, {}, each if _ = "" then null else _),
+				    Typed = Table.TransformColumnTypes(Blanks, {{"customer_id", type text}, {"age", Int64.Type}, {"gender", type text}, {"occupation", type text}, {"annual_income", type number}, {"city", type text}, {"state", type text}, {"customer_since", type date}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table

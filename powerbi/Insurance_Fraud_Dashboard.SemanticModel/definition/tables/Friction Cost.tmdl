@@ -1,0 +1,19 @@
+table 'Friction Cost'
+	lineageTag: 416eaa86-2901-5896-98fb-c28c04d13771
+
+	measure 'Friction Cost Value' = SELECTEDVALUE ( 'Friction Cost'[Friction Cost], 15000 )
+		formatString: #,##0
+		lineageTag: f592b463-4a8b-544c-85f9-44adb58ea164
+
+	column 'Friction Cost'
+		dataType: int64
+		formatString: #,##0
+		lineageTag: 1a4ac8ff-b0cc-5b4c-baae-1930b76e7d1b
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		annotation SummarizationSetBy = User
+
+	partition 'Friction Cost' = calculated
+		mode: import
+		source = GENERATESERIES ( 0, 50000, 5000 )

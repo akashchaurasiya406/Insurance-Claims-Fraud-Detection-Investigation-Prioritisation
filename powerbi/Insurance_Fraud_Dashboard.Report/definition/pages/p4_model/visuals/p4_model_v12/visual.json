@@ -1,0 +1,114 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "p4_model_v12",
+  "position": {
+    "x": 16,
+    "y": 284,
+    "z": 11,
+    "height": 420,
+    "width": 640,
+    "tabOrder": 11
+  },
+  "visual": {
+    "visualType": "lineChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "capacity_curve"
+                    }
+                  },
+                  "Property": "pct_reviewed"
+                }
+              },
+              "queryRef": "capacity_curve.pct_reviewed",
+              "nativeQueryRef": "pct_reviewed",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Capacity Value Recall"
+                }
+              },
+              "queryRef": "_Measures.Capacity Value Recall",
+              "nativeQueryRef": "Capacity Value Recall"
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "capacity_curve"
+                    }
+                  },
+                  "Property": "strategy"
+                }
+              },
+              "queryRef": "capacity_curve.strategy",
+              "nativeQueryRef": "strategy"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "capacity_curve"
+                  }
+                },
+                "Property": "pct_reviewed"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'% of fraud value caught vs % of claims investigated'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

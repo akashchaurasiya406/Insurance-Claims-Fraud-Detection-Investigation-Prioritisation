@@ -1,0 +1,123 @@
+table model_comparison
+	lineageTag: 469261a8-5409-5cf2-b679-cc26d29f2071
+
+	column model
+		dataType: string
+		lineageTag: e67f0bfd-8880-5749-afac-72c812d5a191
+		summarizeBy: none
+		sourceColumn: model
+		sortByColumn: display_order
+
+		annotation SummarizationSetBy = User
+
+	column roc_auc
+		dataType: double
+		formatString: 0.000
+		lineageTag: a24ad302-ea00-54c0-813f-c93bf6814799
+		summarizeBy: none
+		sourceColumn: roc_auc
+
+		annotation SummarizationSetBy = User
+
+	column pr_auc
+		dataType: double
+		formatString: 0.000
+		lineageTag: 1032c17e-b9ac-52ec-9ac8-62a8db2c0cfa
+		summarizeBy: none
+		sourceColumn: pr_auc
+
+		annotation SummarizationSetBy = User
+
+	column precision_at_capacity
+		dataType: double
+		formatString: 0.0%
+		lineageTag: ae4b15a3-6ce9-5cf9-872b-4d9dc3da8046
+		summarizeBy: none
+		sourceColumn: precision_at_capacity
+
+		annotation SummarizationSetBy = User
+
+	column recall_at_capacity
+		dataType: double
+		formatString: 0.0%
+		lineageTag: 8a3bca40-abee-5747-a9df-490e92d9ca07
+		summarizeBy: none
+		sourceColumn: recall_at_capacity
+
+		annotation SummarizationSetBy = User
+
+	column fraud_amount_caught
+		dataType: double
+		formatString: #,##0
+		lineageTag: 105fc638-62f7-56f0-a033-c124570e3cff
+		summarizeBy: none
+		sourceColumn: fraud_amount_caught
+
+		annotation SummarizationSetBy = User
+
+	column fraud_amount_recall
+		dataType: double
+		formatString: 0.0%
+		lineageTag: 02a03623-eef5-56ec-91b6-579c95ce7d94
+		summarizeBy: none
+		sourceColumn: fraud_amount_recall
+
+		annotation SummarizationSetBy = User
+
+	column investigations
+		dataType: int64
+		formatString: 0
+		lineageTag: 1b0ab785-3f7d-5ecc-8fe0-c0eced4ceb6f
+		summarizeBy: none
+		sourceColumn: investigations
+
+		annotation SummarizationSetBy = User
+
+	column false_positives
+		dataType: int64
+		formatString: 0
+		lineageTag: f72fccfe-f55c-544d-8a19-ca6b406278a3
+		summarizeBy: none
+		sourceColumn: false_positives
+
+		annotation SummarizationSetBy = User
+
+	column fraud_savings
+		dataType: double
+		formatString: #,##0
+		lineageTag: ddfdf661-3964-5b8c-bc9d-41c6513f49b4
+		summarizeBy: none
+		sourceColumn: fraud_savings
+
+		annotation SummarizationSetBy = User
+
+	column net_benefit
+		dataType: double
+		formatString: #,##0
+		lineageTag: 51aee411-a26f-57f1-9dc6-9653455e73ea
+		summarizeBy: none
+		sourceColumn: net_benefit
+
+		annotation SummarizationSetBy = User
+
+	column display_order
+		dataType: int64
+		formatString: 0
+		lineageTag: 375d4af2-bcde-58cf-9670-11a505fae1a8
+		summarizeBy: none
+		sourceColumn: display_order
+
+		annotation SummarizationSetBy = User
+
+	partition model_comparison = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(DataFolder & "model_comparison.csv"), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Blanks = Table.TransformColumns(Promoted, {}, each if _ = "" then null else _),
+				    Typed = Table.TransformColumnTypes(Blanks, {{"model", type text}, {"roc_auc", type number}, {"pr_auc", type number}, {"precision_at_capacity", type number}, {"recall_at_capacity", type number}, {"fraud_amount_caught", type number}, {"fraud_amount_recall", type number}, {"investigations", Int64.Type}, {"false_positives", Int64.Type}, {"fraud_savings", type number}, {"net_benefit", type number}, {"display_order", Int64.Type}}, "en-US")
+				in
+				    Typed
+
+	annotation PBI_ResultType = Table
