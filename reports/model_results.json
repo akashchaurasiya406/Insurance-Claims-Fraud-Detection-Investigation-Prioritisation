@@ -1,0 +1,67 @@
+{
+  "data": {
+    "train_claims": 6989,
+    "valid_claims": 4767,
+    "test_claims": 5054,
+    "test_fraud_rate": 0.09556786703601108
+  },
+  "selected_model": {
+    "name": "HistGradientBoostingClassifier",
+    "params": {
+      "learning_rate": 0.03,
+      "max_leaf_nodes": 15,
+      "class_weight": null
+    },
+    "ranking": "expected loss (p x amount)"
+  },
+  "assumptions": {
+    "siu_capacity": 0.1,
+    "cost_per_investigation_inr": 5000,
+    "recovery_rate": 0.6,
+    "false_positive_friction_inr": 15000
+  },
+  "test_2025": {
+    "model": {
+      "roc_auc": 0.7838950481317769,
+      "pr_auc": 0.3501220292104152,
+      "precision_at_capacity": 0.3564356435643564,
+      "recall_at_capacity": 0.37267080745341613,
+      "fraud_amount_caught": 85799500.0,
+      "fraud_amount_recall": 0.7410211123154453,
+      "investigations": 505.0,
+      "false_positives": 325.0,
+      "fraud_savings": 51479700.0,
+      "net_benefit": 44079700.0
+    },
+    "rules_baseline": {
+      "roc_auc": 0.7345833599436179,
+      "pr_auc": 0.23579404307878393,
+      "precision_at_capacity": 0.3108910891089109,
+      "recall_at_capacity": 0.3250517598343685,
+      "fraud_amount_caught": 46141000.0,
+      "fraud_amount_recall": 0.39850413048265976,
+      "investigations": 505.0,
+      "false_positives": 348.0,
+      "fraud_savings": 27684600.0,
+      "net_benefit": 19939600.0
+    },
+    "uplift": {
+      "recall_points": 0.047619047619047616,
+      "precision_multiple": 1.1464968152866242,
+      "extra_fraud_amount_caught_inr": 39658500.0,
+      "extra_net_benefit_inr": 24140100.0
+    },
+    "optimal_review_share": 0.15,
+    "net_benefit_at_optimum_inr": 46619900.0
+  },
+  "top_drivers": [
+    "garage_hist_fraud_rate",
+    "claim_to_idv_ratio",
+    "report_delay_days",
+    "days_policy_to_incident",
+    "agent_hist_fraud_rate",
+    "vehicle_claim_amount",
+    "incident_severity",
+    "is_night_incident"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Claims Fraud Analytics",
+  "dataColors": ["#2a78d6", "#eb6834", "#1baf7a", "#eda100", "#e87ba4", "#008300", "#6250d6", "#e34948"],
+  "background": "#fcfcfb",
+  "foreground": "#0b0b0b",
+  "tableAccent": "#2a78d6",
+  "good": "#1baf7a",
+  "neutral": "#eda100",
+  "bad": "#e34948",
+  "maximum": "#104281",
+  "center": "#86b6ef",
+  "minimum": "#cde2fb",
+  "textClasses": {
+    "title":   { "fontFace": "Segoe UI Semibold", "fontSize": 12, "color": "#0b0b0b" },
+    "header":  { "fontFace": "Segoe UI Semibold", "fontSize": 11, "color": "#0b0b0b" },
+    "label":   { "fontFace": "Segoe UI", "fontSize": 9, "color": "#52514e" },
+    "callout": { "fontFace": "Segoe UI Semibold", "fontSize": 26, "color": "#0b0b0b" }
+  },
+  "visualStyles": {
+    "*": {
+      "*": {
+        "background": [{ "show": true, "color": { "solid": { "color": "#ffffff" } }, "transparency": 0 }],
+        "border": [{ "show": true, "color": { "solid": { "color": "#e6e5e1" } }, "radius": 8 }],
+        "valueAxis": [{ "gridlineColor": { "solid": { "color": "#ebeae6" } } }]
+      }
+    },
+    "page": {
+      "*": { "background": [{ "color": { "solid": { "color": "#f4f3ef" } }, "transparency": 0 }] }
+    }
+  }
+}

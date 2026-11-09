@@ -1,0 +1,321 @@
+garage_id,garage_name,city,state,is_network_garage,empanelled_since
+G500,Prime Motors,Ahmedabad,Gujarat,0,2013-02-23
+G501,Sai Auto Garage,New Delhi,Delhi,1,2020-01-28
+G502,Galaxy Automobiles,New Delhi,Delhi,1,2012-04-06
+G503,Prime Car Care,Bengaluru,Karnataka,1,2011-08-31
+G504,Ganesh Auto Garage,Nagpur,Maharashtra,0,2015-10-17
+G505,Star Motors,Ahmedabad,Gujarat,0,2018-01-29
+G506,Royal Motor Works,Surat,Gujarat,1,2018-03-21
+G507,Shree Automobiles,Kolkata,West Bengal,1,2017-10-12
+G508,City Motor Works,Kolkata,West Bengal,1,2010-03-11
+G509,Shree Auto Garage,Lucknow,Uttar Pradesh,1,2015-09-12
+G510,Galaxy Auto Garage,New Delhi,Delhi,0,2012-12-18
+G511,Prime Service Centre,Kochi,Kerala,1,2020-11-26
+G512,Star Auto Works,New Delhi,Delhi,0,2024-01-13
+G513,Galaxy Motor Works,New Delhi,Delhi,1,2016-09-24
+G514,Metro Car Clinic,Ahmedabad,Gujarat,1,2018-02-26
+G515,Royal Auto Works,Kolkata,West Bengal,1,2011-05-24
+G516,New India Auto Works,Bhopal,Madhya Pradesh,1,2023-01-24
+G517,Balaji Motor Works,Lucknow,Uttar Pradesh,1,2024-04-02
+G518,Sai Automobiles,Chennai,Tamil Nadu,1,2015-02-01
+G519,Balaji Motor Works,Gurugram,Haryana,1,2011-10-19
+G520,New India Auto Works,Chennai,Tamil Nadu,1,2014-06-22
+G521,Prime Auto Works,Mumbai,Maharashtra,1,2016-02-14
+G522,Classic Motors,Coimbatore,Tamil Nadu,0,2016-07-17
+G523,Star Car Clinic,Noida,Uttar Pradesh,1,2015-11-17
+G524,New India Automobiles,Bengaluru,Karnataka,1,2013-08-08
+G525,Ganesh Auto Works,Ahmedabad,Gujarat,0,2022-02-04
+G526,Metro Car Clinic,Ludhiana,Punjab,1,2018-08-30
+G527,Royal Car Care,Bengaluru,Karnataka,0,2011-03-10
+G528,Classic Auto Works,Kolkata,West Bengal,1,2019-12-03
+G529,Supreme Auto Works,Kolkata,West Bengal,1,2018-08-24
+G530,Galaxy Auto Garage,Pune,Maharashtra,1,2022-04-16
+G531,City Automobiles,Pune,Maharashtra,0,2021-01-02
+G532,Galaxy Car Care,Kochi,Kerala,1,2018-07-30
+G533,Ganesh Motor Works,Kolkata,West Bengal,1,2012-07-24
+G534,Highway Auto Works,Noida,Uttar Pradesh,1,2020-09-28
+G535,Balaji Motors,Lucknow,Uttar Pradesh,0,2015-06-15
+G536,Galaxy Auto Garage,New Delhi,Delhi,1,2020-04-06
+G537,Galaxy Auto Works,Kochi,Kerala,1,2015-07-11
+G538,Metro Auto Works,Chennai,Tamil Nadu,1,2023-05-24
+G539,Highway Motors,Pune,Maharashtra,0,2022-11-21
+G540,Ganesh Auto Garage,Bengaluru,Karnataka,1,2011-07-27
+G541,Supreme Auto Works,Kolkata,West Bengal,0,2011-08-07
+G542,National Auto Works,Ahmedabad,Gujarat,1,2019-08-16
+G543,Prime Automobiles,New Delhi,Delhi,0,2022-08-28
+G544,Metro Automobiles,Lucknow,Uttar Pradesh,1,2021-10-22
+G545,National Car Care,Mumbai,Maharashtra,1,2020-06-01
+G546,Ganesh Service Centre,Mumbai,Maharashtra,0,2024-04-14
+G547,New India Automobiles,Bengaluru,Karnataka,1,2022-09-25
+G548,Supreme Service Centre,Hyderabad,Telangana,1,2018-03-04
+G549,Balaji Service Centre,Bengaluru,Karnataka,0,2019-12-16
+G550,City Service Centre,Kolkata,West Bengal,1,2018-08-08
+G551,New India Car Care,Hyderabad,Telangana,1,2019-02-06
+G552,Sai Car Care,Ludhiana,Punjab,1,2014-05-19
+G553,Sai Car Care,Chennai,Tamil Nadu,1,2023-11-09
+G554,Metro Service Centre,New Delhi,Delhi,1,2016-12-09
+G555,Royal Car Care,Jaipur,Rajasthan,1,2015-11-17
+G556,Galaxy Automobiles,Lucknow,Uttar Pradesh,1,2012-07-21
+G557,Galaxy Automobiles,Chennai,Tamil Nadu,1,2020-11-03
+G558,Metro Automobiles,Pune,Maharashtra,1,2014-09-18
+G559,Metro Automobiles,Kolkata,West Bengal,0,2011-08-22
+G560,Highway Auto Works,Mumbai,Maharashtra,1,2011-12-26
+G561,Shree Car Care,Indore,Madhya Pradesh,1,2015-08-15
+G562,Balaji Auto Works,Mumbai,Maharashtra,1,2011-12-03
+G563,Prime Auto Works,Bengaluru,Karnataka,1,2015-05-15
+G564,Prime Auto Works,Surat,Gujarat,0,2014-02-17
+G565,Classic Automobiles,Mumbai,Maharashtra,1,2014-02-17
+G566,Shree Motor Works,New Delhi,Delhi,1,2022-03-10
+G567,Galaxy Motors,Noida,Uttar Pradesh,0,2014-08-04
+G568,Galaxy Car Care,Ahmedabad,Gujarat,1,2018-05-24
+G569,City Car Clinic,Chennai,Tamil Nadu,1,2024-02-15
+G570,Balaji Auto Garage,Ahmedabad,Gujarat,1,2015-04-19
+G571,Highway Auto Works,Chennai,Tamil Nadu,1,2017-05-12
+G572,Ganesh Service Centre,Mumbai,Maharashtra,1,2012-10-29
+G573,Ganesh Auto Works,Kanpur,Uttar Pradesh,1,2016-10-26
+G574,Sai Car Care,Indore,Madhya Pradesh,1,2013-03-04
+G575,Shree Automobiles,Noida,Uttar Pradesh,1,2021-12-12
+G576,New India Service Centre,Ahmedabad,Gujarat,1,2021-12-29
+G577,Balaji Car Care,Ahmedabad,Gujarat,1,2017-08-21
+G578,Highway Car Care,Bengaluru,Karnataka,0,2012-09-21
+G579,Prime Motors,New Delhi,Delhi,1,2016-11-21
+G580,Metro Motor Works,Mumbai,Maharashtra,1,2019-06-10
+G581,City Automobiles,Hyderabad,Telangana,1,2017-05-05
+G582,Metro Motor Works,Kolkata,West Bengal,1,2016-06-05
+G583,National Car Care,Mumbai,Maharashtra,1,2024-05-26
+G584,Sai Auto Works,New Delhi,Delhi,0,2013-01-16
+G585,Star Car Clinic,Ahmedabad,Gujarat,1,2015-10-12
+G586,Balaji Car Care,Bengaluru,Karnataka,0,2014-07-08
+G587,Shree Motor Works,Ahmedabad,Gujarat,1,2019-06-13
+G588,National Auto Garage,New Delhi,Delhi,0,2021-08-19
+G589,National Auto Garage,Kolkata,West Bengal,1,2015-03-19
+G590,Ganesh Car Care,Bhopal,Madhya Pradesh,1,2011-09-28
+G591,New India Automobiles,Lucknow,Uttar Pradesh,0,2016-01-30
+G592,Prime Car Clinic,Kolkata,West Bengal,0,2011-02-07
+G593,Royal Motor Works,New Delhi,Delhi,1,2022-01-05
+G594,Balaji Auto Garage,Indore,Madhya Pradesh,0,2010-08-04
+G595,Sai Car Care,Kolkata,West Bengal,0,2019-09-19
+G596,Prime Automobiles,Jaipur,Rajasthan,1,2015-12-07
+G597,Classic Automobiles,Surat,Gujarat,1,2010-02-15
+G598,Classic Motor Works,New Delhi,Delhi,1,2020-01-14
+G599,Sai Service Centre,Hyderabad,Telangana,0,2023-07-17
+G600,Sai Service Centre,Hyderabad,Telangana,1,2024-02-25
+G601,New India Motor Works,Ludhiana,Punjab,1,2017-10-20
+G602,Royal Car Care,Ahmedabad,Gujarat,1,2013-01-22
+G603,Classic Auto Works,Bengaluru,Karnataka,0,2012-11-23
+G604,Royal Service Centre,Gurugram,Haryana,1,2023-12-14
+G605,Galaxy Car Care,Lucknow,Uttar Pradesh,1,2015-12-19
+G606,Shree Auto Works,Coimbatore,Tamil Nadu,0,2011-04-25
+G607,Star Auto Garage,Hyderabad,Telangana,0,2015-07-27
+G608,Royal Service Centre,Gurugram,Haryana,0,2011-10-07
+G609,Metro Car Clinic,Gurugram,Haryana,0,2013-08-15
+G610,Star Motors,Pune,Maharashtra,1,2020-11-19
+G611,Highway Auto Garage,Gurugram,Haryana,0,2010-03-31
+G612,City Automobiles,Surat,Gujarat,1,2023-02-23
+G613,Highway Automobiles,Kanpur,Uttar Pradesh,1,2010-02-19
+G614,New India Automobiles,Bengaluru,Karnataka,1,2022-03-19
+G615,Prime Automobiles,Kanpur,Uttar Pradesh,1,2013-11-26
+G616,New India Car Care,Kochi,Kerala,1,2011-04-25
+G617,New India Automobiles,Pune,Maharashtra,1,2020-04-21
+G618,Supreme Motors,Bengaluru,Karnataka,1,2012-12-12
+G619,Ganesh Auto Garage,Gurugram,Haryana,0,2010-06-27
+G620,Sai Service Centre,Noida,Uttar Pradesh,0,2015-05-11
+G621,Highway Motor Works,Mumbai,Maharashtra,1,2022-10-22
+G622,National Automobiles,Lucknow,Uttar Pradesh,0,2010-11-09
+G623,Shree Auto Garage,Kanpur,Uttar Pradesh,1,2011-04-17
+G624,Supreme Motors,Hyderabad,Telangana,1,2011-05-13
+G625,Sai Auto Garage,Kolkata,West Bengal,0,2016-02-16
+G626,Star Automobiles,Chennai,Tamil Nadu,1,2022-02-25
+G627,Classic Car Clinic,Bhopal,Madhya Pradesh,1,2014-11-15
+G628,Balaji Car Care,Gurugram,Haryana,0,2012-11-02
+G629,Sai Car Clinic,Chennai,Tamil Nadu,0,2016-01-04
+G630,Shree Auto Works,Hyderabad,Telangana,1,2016-10-03
+G631,Classic Car Clinic,Hyderabad,Telangana,1,2016-03-10
+G632,Highway Car Clinic,Bengaluru,Karnataka,1,2020-03-08
+G633,Balaji Automobiles,Bhopal,Madhya Pradesh,0,2018-04-10
+G634,Royal Auto Works,Noida,Uttar Pradesh,0,2015-09-18
+G635,City Car Clinic,Surat,Gujarat,0,2018-09-15
+G636,Star Automobiles,Ludhiana,Punjab,1,2015-08-25
+G637,Balaji Service Centre,Ludhiana,Punjab,0,2019-09-24
+G638,New India Auto Garage,Mumbai,Maharashtra,1,2016-01-30
+G639,Sai Service Centre,Jaipur,Rajasthan,0,2019-12-08
+G640,Ganesh Car Care,Jaipur,Rajasthan,1,2021-10-08
+G641,Star Motor Works,Bengaluru,Karnataka,1,2013-12-05
+G642,Royal Motors,Hyderabad,Telangana,1,2020-10-06
+G643,Galaxy Motors,Ludhiana,Punjab,0,2016-11-01
+G644,Classic Motor Works,Mysuru,Karnataka,1,2024-05-21
+G645,Metro Motors,Noida,Uttar Pradesh,1,2010-02-04
+G646,City Motors,New Delhi,Delhi,0,2024-05-06
+G647,Ganesh Motors,Jaipur,Rajasthan,1,2021-06-01
+G648,National Motor Works,New Delhi,Delhi,1,2013-03-04
+G649,Classic Service Centre,Mumbai,Maharashtra,1,2018-08-02
+G650,New India Automobiles,New Delhi,Delhi,1,2020-02-13
+G651,Highway Automobiles,Bhopal,Madhya Pradesh,0,2012-04-26
+G652,Ganesh Car Care,Bengaluru,Karnataka,0,2017-05-26
+G653,New India Auto Garage,New Delhi,Delhi,1,2013-06-10
+G654,Classic Automobiles,Kanpur,Uttar Pradesh,0,2022-02-22
+G655,Royal Automobiles,Indore,Madhya Pradesh,0,2017-06-26
+G656,Highway Auto Works,Mumbai,Maharashtra,0,2017-07-06
+G657,Royal Motors,Noida,Uttar Pradesh,0,2019-07-31
+G658,National Service Centre,Noida,Uttar Pradesh,1,2016-10-04
+G659,Royal Car Clinic,Pune,Maharashtra,1,2021-01-10
+G660,Galaxy Auto Works,Pune,Maharashtra,1,2022-03-09
+G661,Metro Motors,New Delhi,Delhi,0,2013-01-16
+G662,Galaxy Car Clinic,Bengaluru,Karnataka,0,2020-08-11
+G663,Galaxy Car Care,Mumbai,Maharashtra,1,2012-05-25
+G664,Balaji Automobiles,Mumbai,Maharashtra,1,2015-07-28
+G665,Shree Automobiles,Jaipur,Rajasthan,1,2014-09-18
+G666,New India Motors,Mumbai,Maharashtra,0,2022-10-19
+G667,Royal Car Clinic,Bhopal,Madhya Pradesh,1,2016-03-16
+G668,Prime Automobiles,New Delhi,Delhi,1,2016-01-13
+G669,Metro Motors,Hyderabad,Telangana,0,2015-04-14
+G670,Sai Car Care,Hyderabad,Telangana,1,2013-02-20
+G671,New India Service Centre,Ludhiana,Punjab,0,2010-02-02
+G672,Balaji Car Care,Ahmedabad,Gujarat,1,2018-07-07
+G673,Highway Service Centre,Indore,Madhya Pradesh,0,2023-06-21
+G674,Metro Automobiles,Jaipur,Rajasthan,1,2013-09-07
+G675,Ganesh Motor Works,Ahmedabad,Gujarat,1,2019-10-24
+G676,City Car Clinic,New Delhi,Delhi,0,2010-09-22
+G677,Prime Car Clinic,Gurugram,Haryana,1,2022-01-29
+G678,City Automobiles,Ludhiana,Punjab,1,2013-03-24
+G679,Sai Motors,Ahmedabad,Gujarat,0,2021-04-10
+G680,Ganesh Auto Garage,Ludhiana,Punjab,1,2015-09-26
+G681,Sai Auto Garage,Kolkata,West Bengal,1,2015-09-19
+G682,Sai Motor Works,Kochi,Kerala,1,2023-12-30
+G683,Classic Automobiles,Chennai,Tamil Nadu,0,2020-05-07
+G684,City Service Centre,New Delhi,Delhi,1,2015-11-30
+G685,Metro Auto Works,Kanpur,Uttar Pradesh,1,2012-02-04
+G686,New India Motor Works,Mumbai,Maharashtra,1,2017-02-28
+G687,Supreme Motors,Chennai,Tamil Nadu,1,2016-04-26
+G688,Supreme Motor Works,Noida,Uttar Pradesh,1,2012-09-03
+G689,Royal Car Care,Kanpur,Uttar Pradesh,1,2020-09-09
+G690,Highway Car Care,Bhopal,Madhya Pradesh,0,2022-04-26
+G691,Royal Automobiles,Hyderabad,Telangana,1,2023-06-25
+G692,National Motor Works,Chennai,Tamil Nadu,0,2013-11-08
+G693,Star Motors,Chennai,Tamil Nadu,1,2021-01-07
+G694,Shree Auto Works,Noida,Uttar Pradesh,1,2019-11-25
+G695,City Auto Works,Chennai,Tamil Nadu,1,2016-09-18
+G696,Sai Service Centre,Pune,Maharashtra,0,2014-05-14
+G697,Prime Service Centre,Mumbai,Maharashtra,1,2010-05-18
+G698,Metro Car Care,Chennai,Tamil Nadu,1,2023-09-09
+G699,Supreme Auto Works,Bengaluru,Karnataka,0,2014-02-07
+G700,Ganesh Car Clinic,Nagpur,Maharashtra,1,2012-08-28
+G701,New India Service Centre,Hyderabad,Telangana,0,2016-06-13
+G702,National Car Clinic,Chennai,Tamil Nadu,1,2015-03-10
+G703,Supreme Auto Works,Bengaluru,Karnataka,1,2017-09-05
+G704,Star Car Clinic,Kolkata,West Bengal,0,2019-03-08
+G705,Galaxy Service Centre,Pune,Maharashtra,1,2014-05-31
+G706,Supreme Motors,Bengaluru,Karnataka,0,2011-09-22
+G707,Supreme Automobiles,Mumbai,Maharashtra,0,2017-09-13
+G708,Highway Automobiles,Jaipur,Rajasthan,1,2012-09-17
+G709,National Service Centre,Kolkata,West Bengal,0,2023-01-15
+G710,Prime Service Centre,Hyderabad,Telangana,1,2015-04-18
+G711,Balaji Auto Garage,Indore,Madhya Pradesh,1,2019-12-01
+G712,New India Auto Works,Ludhiana,Punjab,1,2011-05-16
+G713,Supreme Automobiles,Hyderabad,Telangana,1,2019-10-21
+G714,Star Motor Works,Kolkata,West Bengal,1,2012-05-25
+G715,Galaxy Car Care,Nagpur,Maharashtra,1,2010-09-01
+G716,National Automobiles,Kolkata,West Bengal,1,2011-08-08
+G717,Shree Car Clinic,Hyderabad,Telangana,1,2023-12-27
+G718,Star Motors,Hyderabad,Telangana,1,2017-04-15
+G719,New India Auto Garage,Mumbai,Maharashtra,1,2010-07-14
+G720,Galaxy Motor Works,Kolkata,West Bengal,1,2022-08-10
+G721,Galaxy Motor Works,Hyderabad,Telangana,1,2016-04-02
+G722,Classic Automobiles,New Delhi,Delhi,0,2023-07-07
+G723,Shree Motors,Indore,Madhya Pradesh,1,2023-03-11
+G724,Galaxy Automobiles,Coimbatore,Tamil Nadu,1,2022-11-25
+G725,Balaji Motors,Kolkata,West Bengal,1,2010-08-14
+G726,Balaji Service Centre,Kolkata,West Bengal,1,2024-03-24
+G727,Shree Auto Works,Pune,Maharashtra,1,2010-09-01
+G728,Supreme Auto Works,Chennai,Tamil Nadu,1,2023-07-06
+G729,Royal Car Clinic,Kanpur,Uttar Pradesh,1,2017-09-25
+G730,Royal Car Care,Bengaluru,Karnataka,1,2019-05-07
+G731,Star Car Care,Chennai,Tamil Nadu,1,2017-01-07
+G732,City Auto Garage,Coimbatore,Tamil Nadu,1,2015-01-09
+G733,City Auto Works,Surat,Gujarat,1,2011-06-16
+G734,Highway Car Care,Bengaluru,Karnataka,1,2022-12-05
+G735,Highway Motors,Chennai,Tamil Nadu,1,2024-01-04
+G736,Metro Auto Works,Nagpur,Maharashtra,1,2021-07-10
+G737,Sai Motors,New Delhi,Delhi,1,2016-06-17
+G738,New India Motor Works,Kochi,Kerala,0,2011-02-08
+G739,Classic Service Centre,Mumbai,Maharashtra,1,2011-10-03
+G740,Classic Auto Garage,Gurugram,Haryana,0,2023-02-18
+G741,Ganesh Motors,Hyderabad,Telangana,1,2010-10-30
+G742,Supreme Car Clinic,New Delhi,Delhi,1,2020-10-10
+G743,Galaxy Car Care,Mumbai,Maharashtra,1,2010-08-27
+G744,Balaji Automobiles,Coimbatore,Tamil Nadu,1,2019-08-28
+G745,New India Car Clinic,New Delhi,Delhi,1,2018-01-19
+G746,Royal Motor Works,Surat,Gujarat,1,2014-10-24
+G747,Star Car Care,Chennai,Tamil Nadu,0,2011-03-02
+G748,National Motors,Noida,Uttar Pradesh,1,2019-01-15
+G749,Galaxy Motor Works,Pune,Maharashtra,1,2019-05-25
+G750,Metro Car Care,Kolkata,West Bengal,1,2011-12-18
+G751,New India Car Clinic,Ludhiana,Punjab,1,2018-04-22
+G752,Prime Auto Works,Noida,Uttar Pradesh,1,2013-08-04
+G753,Sai Auto Works,Coimbatore,Tamil Nadu,0,2013-08-05
+G754,Supreme Auto Garage,Ludhiana,Punjab,1,2023-11-08
+G755,Classic Service Centre,Hyderabad,Telangana,1,2023-08-20
+G756,Balaji Car Care,Kanpur,Uttar Pradesh,1,2024-06-24
+G757,Shree Car Care,Bengaluru,Karnataka,1,2013-10-10
+G758,Star Auto Works,Hyderabad,Telangana,0,2023-08-11
+G759,Metro Automobiles,Pune,Maharashtra,0,2018-09-03
+G760,Metro Car Clinic,Kolkata,West Bengal,1,2016-02-04
+G761,Shree Motors,Noida,Uttar Pradesh,1,2019-10-10
+G762,Prime Car Care,Chennai,Tamil Nadu,0,2017-04-03
+G763,Metro Service Centre,Jaipur,Rajasthan,1,2013-10-17
+G764,Prime Auto Works,Ahmedabad,Gujarat,1,2021-09-17
+G765,City Car Clinic,New Delhi,Delhi,1,2010-10-04
+G766,Highway Car Care,Nagpur,Maharashtra,1,2018-02-03
+G767,Sai Car Clinic,Kanpur,Uttar Pradesh,1,2022-02-04
+G768,Sai Automobiles,Coimbatore,Tamil Nadu,1,2022-11-21
+G769,New India Auto Garage,Mumbai,Maharashtra,0,2018-10-16
+G770,City Motors,Kochi,Kerala,0,2023-05-10
+G771,Ganesh Motor Works,Ludhiana,Punjab,1,2014-01-30
+G772,Galaxy Automobiles,Pune,Maharashtra,0,2014-07-19
+G773,Supreme Auto Garage,Mumbai,Maharashtra,1,2020-11-09
+G774,National Automobiles,Ahmedabad,Gujarat,0,2016-08-15
+G775,Prime Auto Works,Mumbai,Maharashtra,1,2022-07-19
+G776,Ganesh Auto Garage,Mumbai,Maharashtra,0,2020-07-05
+G777,City Car Clinic,Chennai,Tamil Nadu,1,2021-07-09
+G778,Highway Auto Works,Pune,Maharashtra,1,2013-03-28
+G779,Shree Service Centre,Hyderabad,Telangana,1,2013-08-09
+G780,New India Car Care,Bengaluru,Karnataka,0,2010-02-06
+G781,Classic Motor Works,Lucknow,Uttar Pradesh,1,2020-05-18
+G782,Supreme Car Clinic,New Delhi,Delhi,1,2019-09-07
+G783,Sai Service Centre,Mumbai,Maharashtra,0,2014-07-07
+G784,Ganesh Auto Works,Surat,Gujarat,1,2014-12-07
+G785,Royal Motors,Hyderabad,Telangana,0,2014-03-30
+G786,Ganesh Motors,Bengaluru,Karnataka,1,2013-09-18
+G787,Classic Auto Garage,Kolkata,West Bengal,1,2012-02-01
+G788,Sai Motor Works,Coimbatore,Tamil Nadu,1,2021-09-17
+G789,Star Motor Works,Gurugram,Haryana,0,2017-06-18
+G790,National Auto Garage,Kolkata,West Bengal,1,2020-02-24
+G791,Supreme Automobiles,Coimbatore,Tamil Nadu,1,2010-09-15
+G792,Shree Auto Garage,Mumbai,Maharashtra,0,2016-05-22
+G793,Shree Service Centre,Mumbai,Maharashtra,1,2015-11-23
+G794,Supreme Auto Garage,Hyderabad,Telangana,1,2022-06-07
+G795,New India Auto Garage,Surat,Gujarat,0,2017-09-13
+G796,Supreme Motor Works,Hyderabad,Telangana,1,2019-09-19
+G797,Supreme Auto Works,Jaipur,Rajasthan,0,2011-03-05
+G798,City Auto Garage,Ahmedabad,Gujarat,1,2015-06-26
+G799,National Car Care,Coimbatore,Tamil Nadu,1,2014-09-24
+G800,Balaji Motor Works,Mumbai,Maharashtra,0,2014-05-18
+G801,Star Automobiles,Pune,Maharashtra,1,2021-10-04
+G802,Galaxy Automobiles,Pune,Maharashtra,1,2015-03-13
+G803,Ganesh Auto Garage,Gurugram,Haryana,1,2023-01-23
+G804,Balaji Automobiles,Chennai,Tamil Nadu,1,2018-09-22
+G805,Metro Auto Garage,Bengaluru,Karnataka,1,2013-07-19
+G806,National Motor Works,Ahmedabad,Gujarat,0,2022-06-16
+G807,Balaji Motors,Chennai,Tamil Nadu,1,2019-09-25
+G808,Highway Service Centre,Kolkata,West Bengal,1,2023-10-23
+G809,Galaxy Auto Works,New Delhi,Delhi,0,2014-11-28
+G810,Classic Service Centre,Noida,Uttar Pradesh,1,2011-08-14
+G811,New India Service Centre,Bhopal,Madhya Pradesh,1,2018-07-27
+G812,Supreme Auto Garage,Surat,Gujarat,1,2023-05-24
+G813,Galaxy Service Centre,New Delhi,Delhi,0,2010-09-21
+G814,Star Car Clinic,Kolkata,West Bengal,0,2013-02-08
+G815,National Auto Works,Noida,Uttar Pradesh,0,2010-11-13
+G816,Sai Car Care,Surat,Gujarat,1,2023-11-28
+G817,New India Motor Works,Kochi,Kerala,0,2018-03-17
+G818,Sai Car Care,Pune,Maharashtra,1,2017-03-29
+G819,Balaji Motor Works,Pune,Maharashtra,1,2011-08-21

@@ -1,0 +1,151 @@
+agent_id,channel,city,state,years_experience
+A1000,Dealer,Pune,Maharashtra,8
+A1001,Agent,New Delhi,Delhi,11
+A1002,Broker,New Delhi,Delhi,16
+A1003,Dealer,Coimbatore,Tamil Nadu,13
+A1004,Agent,Coimbatore,Tamil Nadu,20
+A1005,Agent,Pune,Maharashtra,24
+A1006,Agent,Lucknow,Uttar Pradesh,4
+A1007,Dealer,Kanpur,Uttar Pradesh,15
+A1008,Agent,Hyderabad,Telangana,5
+A1009,Agent,Jaipur,Rajasthan,10
+A1010,Dealer,Kolkata,West Bengal,16
+A1011,Bancassurance,Ahmedabad,Gujarat,12
+A1012,Online,Pune,Maharashtra,1
+A1013,Online,Gurugram,Haryana,14
+A1014,Agent,Bengaluru,Karnataka,5
+A1015,Bancassurance,Noida,Uttar Pradesh,1
+A1016,Agent,Ahmedabad,Gujarat,2
+A1017,Agent,Bengaluru,Karnataka,9
+A1018,Broker,Kolkata,West Bengal,22
+A1019,Agent,Lucknow,Uttar Pradesh,18
+A1020,Dealer,Pune,Maharashtra,1
+A1021,Agent,Gurugram,Haryana,13
+A1022,Agent,Kolkata,West Bengal,6
+A1023,Dealer,Ahmedabad,Gujarat,17
+A1024,Online,Mumbai,Maharashtra,4
+A1025,Dealer,Noida,Uttar Pradesh,4
+A1026,Broker,Bengaluru,Karnataka,14
+A1027,Agent,Hyderabad,Telangana,12
+A1028,Agent,Nagpur,Maharashtra,21
+A1029,Broker,Ludhiana,Punjab,2
+A1030,Agent,Nagpur,Maharashtra,24
+A1031,Agent,Noida,Uttar Pradesh,15
+A1032,Online,Chennai,Tamil Nadu,9
+A1033,Dealer,Chennai,Tamil Nadu,20
+A1034,Dealer,Chennai,Tamil Nadu,5
+A1035,Broker,Pune,Maharashtra,21
+A1036,Agent,Indore,Madhya Pradesh,18
+A1037,Dealer,Bhopal,Madhya Pradesh,10
+A1038,Agent,New Delhi,Delhi,3
+A1039,Agent,Chennai,Tamil Nadu,18
+A1040,Dealer,Gurugram,Haryana,16
+A1041,Dealer,Hyderabad,Telangana,23
+A1042,Agent,Pune,Maharashtra,5
+A1043,Agent,Jaipur,Rajasthan,21
+A1044,Online,Noida,Uttar Pradesh,16
+A1045,Agent,Ahmedabad,Gujarat,16
+A1046,Agent,Mumbai,Maharashtra,5
+A1047,Bancassurance,Jaipur,Rajasthan,2
+A1048,Agent,Ludhiana,Punjab,18
+A1049,Dealer,Kolkata,West Bengal,24
+A1050,Agent,Coimbatore,Tamil Nadu,8
+A1051,Agent,Mumbai,Maharashtra,9
+A1052,Dealer,New Delhi,Delhi,18
+A1053,Bancassurance,Bengaluru,Karnataka,17
+A1054,Agent,New Delhi,Delhi,1
+A1055,Dealer,Mumbai,Maharashtra,17
+A1056,Bancassurance,Hyderabad,Telangana,17
+A1057,Broker,Mumbai,Maharashtra,21
+A1058,Dealer,Chennai,Tamil Nadu,22
+A1059,Dealer,Indore,Madhya Pradesh,8
+A1060,Agent,Noida,Uttar Pradesh,11
+A1061,Agent,New Delhi,Delhi,16
+A1062,Online,Mumbai,Maharashtra,6
+A1063,Agent,Chennai,Tamil Nadu,20
+A1064,Bancassurance,Ludhiana,Punjab,4
+A1065,Dealer,Coimbatore,Tamil Nadu,1
+A1066,Broker,New Delhi,Delhi,20
+A1067,Broker,Kolkata,West Bengal,0
+A1068,Agent,Bengaluru,Karnataka,8
+A1069,Agent,Hyderabad,Telangana,16
+A1070,Agent,Indore,Madhya Pradesh,12
+A1071,Dealer,Hyderabad,Telangana,6
+A1072,Bancassurance,Hyderabad,Telangana,18
+A1073,Online,Ahmedabad,Gujarat,0
+A1074,Dealer,Chennai,Tamil Nadu,21
+A1075,Dealer,Ludhiana,Punjab,13
+A1076,Agent,Bengaluru,Karnataka,7
+A1077,Online,Lucknow,Uttar Pradesh,6
+A1078,Dealer,Surat,Gujarat,15
+A1079,Agent,Coimbatore,Tamil Nadu,7
+A1080,Agent,Mumbai,Maharashtra,15
+A1081,Agent,Gurugram,Haryana,6
+A1082,Online,Noida,Uttar Pradesh,11
+A1083,Broker,Kolkata,West Bengal,22
+A1084,Agent,Mumbai,Maharashtra,10
+A1085,Agent,Kolkata,West Bengal,4
+A1086,Broker,Indore,Madhya Pradesh,12
+A1087,Broker,Bengaluru,Karnataka,5
+A1088,Dealer,Bengaluru,Karnataka,19
+A1089,Bancassurance,Mysuru,Karnataka,19
+A1090,Agent,Noida,Uttar Pradesh,20
+A1091,Broker,Coimbatore,Tamil Nadu,15
+A1092,Agent,Bengaluru,Karnataka,4
+A1093,Bancassurance,Chennai,Tamil Nadu,8
+A1094,Online,Gurugram,Haryana,12
+A1095,Broker,Pune,Maharashtra,15
+A1096,Agent,Ahmedabad,Gujarat,11
+A1097,Broker,Noida,Uttar Pradesh,14
+A1098,Dealer,Bengaluru,Karnataka,20
+A1099,Broker,Hyderabad,Telangana,1
+A1100,Agent,Ahmedabad,Gujarat,5
+A1101,Agent,Kolkata,West Bengal,1
+A1102,Agent,Noida,Uttar Pradesh,20
+A1103,Dealer,Mumbai,Maharashtra,9
+A1104,Agent,Bengaluru,Karnataka,23
+A1105,Bancassurance,Kolkata,West Bengal,16
+A1106,Agent,Chennai,Tamil Nadu,21
+A1107,Dealer,Pune,Maharashtra,13
+A1108,Online,Pune,Maharashtra,16
+A1109,Agent,Kanpur,Uttar Pradesh,13
+A1110,Agent,Kanpur,Uttar Pradesh,11
+A1111,Dealer,Noida,Uttar Pradesh,15
+A1112,Broker,Kolkata,West Bengal,21
+A1113,Online,Surat,Gujarat,24
+A1114,Dealer,Bengaluru,Karnataka,22
+A1115,Agent,Indore,Madhya Pradesh,23
+A1116,Dealer,Kochi,Kerala,4
+A1117,Online,Coimbatore,Tamil Nadu,20
+A1118,Broker,Lucknow,Uttar Pradesh,12
+A1119,Dealer,Kolkata,West Bengal,8
+A1120,Dealer,Mumbai,Maharashtra,0
+A1121,Broker,New Delhi,Delhi,14
+A1122,Broker,Ahmedabad,Gujarat,3
+A1123,Agent,Lucknow,Uttar Pradesh,15
+A1124,Agent,Indore,Madhya Pradesh,14
+A1125,Dealer,Bhopal,Madhya Pradesh,13
+A1126,Agent,Kolkata,West Bengal,15
+A1127,Dealer,Surat,Gujarat,3
+A1128,Agent,Mumbai,Maharashtra,3
+A1129,Dealer,Bengaluru,Karnataka,22
+A1130,Agent,Jaipur,Rajasthan,1
+A1131,Dealer,Bengaluru,Karnataka,7
+A1132,Dealer,Hyderabad,Telangana,23
+A1133,Broker,Mumbai,Maharashtra,14
+A1134,Agent,Indore,Madhya Pradesh,1
+A1135,Broker,Gurugram,Haryana,6
+A1136,Agent,Hyderabad,Telangana,5
+A1137,Bancassurance,Ahmedabad,Gujarat,16
+A1138,Online,Nagpur,Maharashtra,14
+A1139,Dealer,Gurugram,Haryana,6
+A1140,Agent,Nagpur,Maharashtra,14
+A1141,Dealer,Noida,Uttar Pradesh,4
+A1142,Online,Surat,Gujarat,1
+A1143,Online,Mumbai,Maharashtra,21
+A1144,Online,Pune,Maharashtra,8
+A1145,Agent,Ahmedabad,Gujarat,19
+A1146,Online,Bengaluru,Karnataka,12
+A1147,Agent,Mumbai,Maharashtra,9
+A1148,Agent,Hyderabad,Telangana,24
+A1149,Dealer,Hyderabad,Telangana,20
