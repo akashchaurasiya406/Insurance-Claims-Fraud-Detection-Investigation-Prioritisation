@@ -20,7 +20,9 @@ Thumbs.db
 .vscode/
 .idea/
 
-# Power BI temp files
+# Power BI: the .pbip project is the source; a .pbix saved from it is a local binary copy
+# (it embeds the machine-specific DataFolder path)
+*.pbix
 *.pbix.bak
 ~$*
 # Power BI Project: per-user settings and local data cache (rebuilt on Refresh)

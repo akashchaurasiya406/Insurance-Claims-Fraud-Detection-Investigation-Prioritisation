@@ -95,7 +95,7 @@ The model's benefit peaks at ~12–15% of claims reviewed, so a modest increase 
 - **Cost-benefit model** with explicit, adjustable assumptions (`COST_PER_INVESTIGATION`, `RECOVERY_RATE`, `FALSE_POSITIVE_FRICTION`)
 
 **Power BI** (`powerbi/Insurance_Fraud_Dashboard.pbip`)
-- Power BI Project generated from code by `src/build_powerbi_project.py` (TMDL semantic model + PBIR report), so the dashboard is version-controlled like the rest of the code
+- Power BI Project generated from code by `src/build_powerbi_project.py` (TMDL semantic model + PBIR report). It's stored as a `.pbip` (plain-text files) rather than a `.pbix` (one binary file) so every measure and visual change is reviewable in Git; **File → Save as** in Power BI Desktop produces the `.pbix`
 - Star schema (1 fact table, 4 dimensions, Date table), 35 DAX measures, including rolling, YoY and RANKX measures
 - **What-if parameters** so stakeholders can stress-test the business case live (at a 40% recovery rate the model still beats the rules: ₹2.69 Cr vs ₹1.07 Cr)
 - 5 pages: Executive Overview · Fraud Patterns · Garage & Agent Network · Model Impact · SIU Investigation Queue
