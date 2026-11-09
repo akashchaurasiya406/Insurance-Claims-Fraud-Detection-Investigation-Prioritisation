@@ -1,6 +1,6 @@
 """
 Reusable modelling utilities for the claims-fraud project.
-Used by both src/train_model.py (pipeline) and notebooks/02_modeling.ipynb (walkthrough).
+Used by both src/train_model.py (pipeline) and notebooks/02_fraud_model_and_business_impact.ipynb (walkthrough).
 """
 from __future__ import annotations
 

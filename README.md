@@ -12,6 +12,8 @@
 
 *Evaluated on an untouched 2025 hold-out year. The model was trained on 2022–2023 and tuned on 2024.*
 
+> **Data note: this project uses synthetic data.** Real insurance claims are confidential, so `src/generate_data.py` builds a realistic relational dataset whose fraud patterns follow known industry red flags, with deliberate noise and data-quality issues. The rupee figures show what the method delivers on that data; they are not results from a real insurer. See [§8 About the data](#8-about-the-data).
+
 ---
 
 ## 1. Business problem
@@ -65,9 +67,9 @@ The model's benefit peaks at ~12–15% of claims reviewed, so a modest increase 
 | Logistic Regression | 0.810 | 0.393 | 41.4% | 43.3% | 48.7% |
 | Random Forest | 0.834 | 0.430 | 43.6% | 45.5% | 52.9% |
 | Gradient Boosting | **0.849** | **0.463** | **46.5%** | **48.7%** | 56.8% |
-| **Gradient Boosting, queue ranked by expected ₹ loss** ✅ | n/a | n/a | 35.6% | 37.3% | **74.1%** |
+| **Gradient Boosting, queue ranked by expected ₹ loss** (chosen) | 0.784 | 0.350 | 35.6% | 37.3% | **74.1%** |
 
-**Key design decision:** ranking claims by *expected loss* (fraud probability × claim amount) instead of probability alone catches fewer fraud *cases* but far more fraud *value*, which is what the business cares about. The choice was made on the 2024 validation year, not on the test set.
+**Key design decision:** ranking claims by *expected loss* (fraud probability × claim amount) instead of probability alone catches fewer fraud *cases* but far more fraud *value*, which is what the business cares about. Its ROC-AUC and PR-AUC are lower because the score is no longer a pure fraud probability. The choice was made on the 2024 validation year, not on the test set.
 
 ## 4. Recommendations
 1. **Switch the SIU queue to the model's expected-loss ranking.** Same headcount, about twice the fraud value caught.
@@ -92,11 +94,12 @@ The model's benefit peaks at ~12–15% of claims reviewed, so a modest increase 
 - **Explainability:** permutation importance plus plain-English **reason codes** for each flagged claim
 - **Cost-benefit model** with explicit, adjustable assumptions (`COST_PER_INVESTIGATION`, `RECOVERY_RATE`, `FALSE_POSITIVE_FRICTION`)
 
-**Power BI** (`powerbi/`)
-- Star schema (1 fact table, 4 dimensions, Date table), 30+ DAX measures, including rolling, YoY and RANKX measures
-- **What-if parameters** so stakeholders can stress-test the business case live
+**Power BI** (`powerbi/Insurance_Fraud_Dashboard.pbip`)
+- Power BI Project generated from code by `src/build_powerbi_project.py` (TMDL semantic model + PBIR report), so the dashboard is version-controlled like the rest of the code
+- Star schema (1 fact table, 4 dimensions, Date table), 35 DAX measures, including rolling, YoY and RANKX measures
+- **What-if parameters** so stakeholders can stress-test the business case live (at a 40% recovery rate the model still beats the rules: ₹2.69 Cr vs ₹1.07 Cr)
 - 5 pages: Executive Overview · Fraud Patterns · Garage & Agent Network · Model Impact · SIU Investigation Queue
-- Step-by-step [build guide](powerbi/dashboard_build_guide.md) with checkpoint values
+- Headline measures reconcile with `reports/model_results.json`; the [dashboard guide](powerbi/dashboard_build_guide.md) lists the checkpoint values
 
 ## 6. Repository structure
 ```
@@ -113,25 +116,32 @@ The model's benefit peaks at ~12–15% of claims reviewed, so a modest increase 
 │   ├── modeling.py                  # features, models, business metrics, reason codes
 │   ├── train_model.py               # selection, evaluation, scoring
 │   ├── plots.py
-│   └── export_powerbi.py
+│   ├── export_powerbi.py            # star-schema CSVs for Power BI
+│   └── build_powerbi_project.py     # generates the .pbip dashboard (model + 5 report pages)
 ├── notebooks/
 │   ├── 01_eda_and_hypothesis_testing.ipynb
 │   └── 02_fraud_model_and_business_impact.ipynb
 ├── reports/                         # DQ report, SQL insights, metrics, figures
-├── powerbi/                         # data/, DAX_measures.md, build guide, theme
-├── data/raw | data/processed
-└── docs/interview_prep.md
+├── powerbi/
+│   ├── Insurance_Fraud_Dashboard.pbip            # open this in Power BI Desktop
+│   ├── Insurance_Fraud_Dashboard.SemanticModel/  # tables, relationships, DAX (TMDL)
+│   ├── Insurance_Fraud_Dashboard.Report/         # pages and visuals (PBIR)
+│   ├── data/                                     # CSVs the dashboard loads
+│   └── DAX_measures.md · dashboard_build_guide.md · fraud_dashboard_theme.json
+└── data/                            # raw CSVs, SQLite DB, modelling table: created by run_pipeline.py
 ```
 
 ## 7. How to run
 ```bash
-git clone <this-repo> && cd insurance-fraud-detection
+git clone https://github.com/akashchaurasiya406/Insurance-Claims-Fraud-Detection-Investigation-Prioritisation.git
+cd Insurance-Claims-Fraud-Detection-Investigation-Prioritisation
 python -m venv .venv && source .venv/bin/activate      # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
-python run_pipeline.py          # ~2 minutes
-jupyter notebook notebooks/     # walkthrough with charts
+python run_pipeline.py                              # ~2 minutes: builds data/, models/, reports/ and powerbi/data/
+jupyter notebook notebooks/                         # walkthrough with charts
+python src/build_powerbi_project.py --set-data-folder   # tells the dashboard where powerbi/data is on this machine
 ```
-Then follow `powerbi/dashboard_build_guide.md` to build the dashboard in Power BI Desktop.
+Then open `powerbi/Insurance_Fraud_Dashboard.pbip` in Power BI Desktop and click **Refresh**. Use **File → Save as** to keep a single `.pbix` file. Details and checkpoint values are in [powerbi/dashboard_build_guide.md](powerbi/dashboard_build_guide.md).
 
 ## 8. About the data
 Real claims data is confidential, and the public fraud datasets are either tiny (~1,000 rows) or fully anonymised (`V1…V28`), which rules out any business storytelling. So `src/generate_data.py` builds a **synthetic but realistic relational dataset**: 30,000 customers, 71,000 policy-years, 320 garages, 150 agents and **16,810 claims (2022–2025)**. Fraud is driven by common industry red flags, with **deliberate noise and overlapping distributions** so no rule or model is perfect. It also includes realistic data-quality issues: missing values and mis-keyed dates.
